@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artevia</title>
+    <link rel="shortcut icon" href="./Assets/images/circle.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./Assets/css/fonts.css" />
+    <link rel="stylesheet" href="./Assets/css/responsive/mobile.css" media="(max-width: 1024px)" />
+    <link rel="stylesheet" href="./Assets/css/responsive/desktop.css" media="(min-width: 1025px)" />
+    <link rel="stylesheet" href="./Assets/css/style.css" />
+    <link rel="stylesheet" href="./Assets/css/responsive/color-sceme.css" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader active">
+        <div class="loadingInfo">
+            <div class="loadAnimation">
+                <span class="loaingText">Loading</span>
+                <div class="dots">
+                    <span class="dot dot1" style="--i: 0"></span>
+                    <span class="dot dot2" style="--i: 1"></span>
+                    <span class="dot dot3" style="--i: 2"></span>
+                </div>
+            </div>
+            <div class="loadingContent mt-16">
+                <ul class="loadingContentInfo">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Artevia Navigation Header -->
+    <header class="header ThemeBg">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="/" aria-label="Artevia home">
+                <h1>ARTEVIA</h1>
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navLinksWrap">
+
+            <!-- Hamburger (button, not div) -->
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="line1" aria-hidden="true"></span>
+                <span class="line2" aria-hidden="true"></span>
+                <span class="line3" aria-hidden="true"></span>
+            </button>
+
+            <nav id="primary-navigation" class="navGroup">
+                <ul class="navLinks">
+                    <li class="hoverfloat" aria-hidden="true"></li>
+
+                    <li>
+                        <a href="/" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#services">Our Services</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+
+                <ul class="navCTA">
+                    <li>
+                        <a href="#bottomCTA">Get a Free Consultation</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <!-- Menu Toggler -->
+    <div class="menuToggleWrap">
+        <button class="menuToggler invisible" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation" title="Menu">
+            <span class="line1" aria-hidden="true"></span>
+            <span class="line2" aria-hidden="true"></span>
+            <span class="line3" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <main>
+        <!-- Banner -->
+        <section class="banner ThemeBg" id="Hero">
+            <div class="bannerContentWrap">
+                <div class="decoLights">
+                    <div class="decoLight decoLight1" style="--i: 1"></div>
+                    <div class="decoLight decoLight2" style="--i: 2"></div>
+                    <div class="decoLight decoLight3" style="--i: 3"></div>
+                </div>
+                <!-- Hero heading -->
+                <header class="bannerTitleWrap">
+                    <h1>
+                    Transforming 
+        <!-- <span class="s_break"></span> -->
+        Spaces,<br>
+        <span class="titleRow2">
+          Elevating Life <span class="s_break"></span> Styles
+        </span>
+      </h1>
+                </header>
+
+                <!-- Feature list -->
+                <ul class="bannerContent">
+                    <li><span aria-hidden="true"></span>Interior Design Solutions</li>
+                    <li><span aria-hidden="true"></span>Pathway to Workspaces</li>
+                    <li><span aria-hidden="true"></span>Concept to Completion</li>
+                    <li><span aria-hidden="true"></span>Workspaces that Inspire Comfort</li>
+                </ul>
+
+                <!-- Call to actions -->
+                <header class="ctaActionControllers mt-24">
+                    <a href="#contact" class="primaryctaBtn" type="a" aria-haspopup="dialog">
+                    Start Your Project
+                </a>
+
+                    <a class="secondaryctaBtn" href="#portfolio">
+                    Explore Our Work
+                </a>
+                </header>
+
+                <!-- Supporting text -->
+                <p class="controllersInfo">
+                    Let’s discuss your interior project
+                </p>
+
+            </div>
+
+            <!-- Hero image -->
+            <div class="bannerImage">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="./Assets/images/banner-large.webp">
+                    <img src="./Assets/images/banner.webp" width="100%" aspect-ratio="16 / 9" alt="Interior design hero banner" fetchpriority="high">
+                </picture>
+
+                <!-- Decorative grid lines -->
+                <div class="gridLines" aria-hidden="true">
+                    <div class="vertilines">
+                        <div class="line line1"></div>
+                        <div class="line line2"></div>
+                    </div>
+                    <div class="hrlines">
+                        <div class="line line1"></div>
+                        <div class="line line2"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <!-- About -->
+        <section class="about themeBg-white" id="about">
+            <div class="decorLamps" aria-hidden="true"></div>
+
+            <header class="titleWrap">
+                <h2>About Artevia</h2>
+                <p class="titleCaption">
+                    Crafting Inspiring Interiors, One Space at a Time
+                </p>
+            </header>
+
+            <div class="aboutRow mt-24">
+                <div class="aboutCol aboutImageCol">
+                    <div class="aboutImageWrap settingUp">
+
+                        <div class="hexagon">
+                            <img src="./Assets/images/banner.webp" alt="Interior design showcase" loading="lazy">
+                        </div>
+
+                        <div class="hexagon">
+                            <img src="./Assets/images/about/thumb2.webp" alt="Interior design showcase" loading="lazy">
+                        </div>
+
+                        <div class="hexagon">
+                            <img src="./Assets/images/about/thumb4.webp" alt="Interior design showcase" loading="lazy">
+                        </div>
+
+                        <div class="hexagon">
+                            <img src="./Assets/images/about/thumb3.webp" alt="Interior design showcase" loading="lazy">
+                        </div>
+
+                        <div class="hexagon">
+                            <img src="./Assets/images/about/thumb5.webp" alt="Interior design showcase" loading="lazy">
+                        </div>
+
+                        <div class="hexagon">
+                            <img src="./Assets/images/about/thumb7.webp" alt="Interior design showcase" loading="lazy">
+                        </div>
+
+                        <div class="hexagon">
+                            <img src="./Assets/images/about/thumb6.webp" alt="Interior design showcase" loading="lazy">
+                        </div>
+
+                        <div class="hexagon">
+                            <img src="./Assets/images/about/thumb8.webp" alt="Interior design showcase" loading="lazy">
+                        </div>
+
+                        <div class="hexagon">
+                            <img src="./Assets/images/about/thumb9.webp" alt="Interior design showcase" loading="lazy">
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="aboutCol aboutCountersCol">
+                    <div class="aboutCounters">
+                        <div class="aboutCounter active">
+                            <div class="countNumber countNumber1">
+                                <h3>120</h3>+</div>
+                            <p class="conterDescription">Design Concepts Delivered
+                            </p>
+                        </div>
+                        <div class="aboutCounter">
+                            <div class="countNumber countNumber2">
+                                <h3>45</h3>+</div>
+                            <p class="conterDescription">Expert Interior Designers</p>
+                        </div>
+                        <div class="aboutCounter">
+                            <div class="countNumber countNumber3">
+                                <h3>25</h3>+</div>
+                            <p class="conterDescription">Cities Served</p>
+                        </div>
+                        <div class="aboutCounter active">
+                            <div class="countNumber countNumber4">
+                                <h3>98</h3>%</div>
+                            <p class="conterDescription">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="aboutCol">
+                    <div class="aboutContent">
+                        <p class="aboutFixedContent">
+                            At Artevia, we believe your space should tell your story. Our team of passionate designers blends creativity, functionality, and innovation to create interiors that reflect your personality and lifestyle.
+                            <span class="mobile-none">
+                <br>
+              </span> From concept to completion, we specialize in residential, commercial, and luxury interiors, delivering timeless designs with meticulous attention to detail. Whether you’re transforming your home or redefining
+                            your workspace, Artevia ensures every corner resonates with style, comfort, and elegance.
+                        </p>
+
+
+                        <span class="aboutFluidContent">
+              We take a collaborative approach, listening closely to your vision and translating it into thoughtfully curated spaces that balance aesthetics with practicality. By combining high-quality materials, smart planning, and refined craftsmanship, we create environments that are not only visually striking but also deeply livable.
+              
+              Every project is guided by purpose, precision, and passion—resulting in interiors that stand the test of time while evolving seamlessly with your needs. At Artevia, design isn’t just about how a space looks; it’s about how it feels, functions, and inspires every day.
+
+            </span>
+
+
+
+                        <div class="LrnMore mt-24">
+                            <a href="./about.html">Discover Our Design Philosophy <span></span></a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services ThemeBg" id="services">
+            <header class="titleWrap  t-center">
+                <h2>Our Services</h2>
+                <p class="titleCaption">
+                    Crafting Interior that reflect your lifestyle
+                </p>
+                <p class="titleDescription mt-24">
+                    From initial concept to flawless execution, Artevia offers a full suite of interior design services tailored to trasform your vision into elegant, personalized spaces.
+                </p>
+            </header>
+            <div class="servicesGrid mt-24">
+
+                <article class="serviceCard featured">
+                    <div class="cardRow">
+                        <div class="serviceCardImage" data-src="./Assets/images/services/service1.jpg">
+                        </div>
+                        <div class="serviceCardContent">
+                            <h3 class="serviceName titleCaption">Residential Design</h3>
+                            <p>
+
+                                Personalized home interiors designed for comfort, balance, and everyday living.
+                            </p>
+
+                            <div class="LrnMore">
+                                <a href="#">Learn More <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="serviceCard">
+                    <div class="cardRow">
+                        <div class="serviceCardImage" data-src="./Assets/images/services/service2.jpg">
+                        </div>
+                        <div class="serviceCardContent">
+                            <h3 class="serviceName titleCaption">Commercial Design</h3>
+                            <p>
+                                Innovative and functional work-spaces designed to boost productivity and identity.
+                            </p>
+
+                            <div class="LrnMore">
+                                <a href="#">Learn More <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="serviceCard">
+                    <div class="cardRow">
+                        <div class="serviceCardImage" data-src="./Assets/images/services/service3.jpg">
+                        </div>
+                        <div class="serviceCardContent">
+                            <h3 class="serviceName titleCaption">Luxury Interiors</h3>
+                            <p>
+                                High-end bespoke designs that exude elegance, sophistication, and exclusivity.
+                            </p>
+
+                            <div class="LrnMore">
+                                <a href="#">Learn More <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="serviceCard">
+                    <div class="cardRow">
+                        <div class="serviceCardImage" data-src="./Assets/images/services/service4.jpg">
+                        </div>
+                        <div class="serviceCardContent">
+                            <h3 class="serviceName titleCaption">Full-Service Renovation</h3>
+                            <p>
+                                End-to-end
+                            </p>
+
+                            <div class="LrnMore">
+                                <a href="#">Learn More <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="learMoreCTA ctaActionControllers mt-24">
+                <button class="secondaryctaBtn LrnMore" type="button">
+                    Get in Touch <span></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section class="portfolio themeBg-white" id="portfolio">
+            <header class="titleWrap">
+                <h2>Portfolio</h2>
+                <p class="titleCaption">
+                    Crafting Interior that reflect your lifestyle
+                </p>
+            </header>
+            <div class="lightBoxViewGrid mt-24">
+                <div class="lightBoxImageGridWrap">
+                    <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb11.webp"></div>
+                    <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb2.webp"></div>
+                    <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb3.webp"></div>
+                    <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb4.webp"></div>
+                </div>
+                <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb5.webp"></div>
+                <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb6.webp"></div>
+
+
+                <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb7.webp"></div>
+                <div class="lightBoxImageGridWrap">
+                    <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb8.webp"></div>
+                    <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb9.webp"></div>
+                    <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb10.webp"></div>
+                    <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb11.webp"></div>
+                </div>
+                <div class="lightBoxImageWrap lightBoxImage" data-src="./Assets/images/portfolio/thumb12.webp"></div>
+
+            </div>
+
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials ThemeBg">
+            <header class="titleWrap t-center">
+                <h2>Testimonials</h2>
+                <p class="titleCaption">
+                    Reflections of trust, craftsmanship, and thoughtfully designed spaces.
+                </p>
+            </header>
+
+            <div class="testmonialStageWrap mt-24">
+                <div class="testimonialCardPrev">
+                    <img src="./Assets/images/chevron-compact-left.svg" alt="Previous image" width="48px" />
+                </div>
+                <div class="testimonialCardsStage">
+                    <div class="testimonialCards">
+                        <div class="testimonialCard">
+                            <div class="testCardImg image1"></div>
+                            <div class="testCardContent">
+                                <p>
+                                    <span id="testQuote">
+                                    <img src="./Assets/images/testimonials/quote.svg" alt="Quote" width="48px"/>
+                                </span>
+                                    <br> “Artevia transformed our vision into a space that feels both elegant and deeply personal. Every detail was thoughtfully executed, and the entire process was seamless from start to finish.”
+                                </p>
+                                <div class="contentProfile mt-16">
+                                    <span id="testReview">~ Gyan Varma</span>
+                                    <span id="reviewerInfo">Residential Client</span>
+                                </div>
+                                <div class="profileRating">
+                                    <div class="start">
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonialCard">
+                            <div class="testCardImg image2"></div>
+                            <div class="testCardContent">
+                                <p>
+                                    <span id="testQuote">
+                                    <img src="./Assets/images/testimonials/quote.svg" alt="Quote" width="48px"/>
+                                </span>
+                                    <br> “The team brought a perfect balance of creativity and functionality to our workspace. The result is not only visually stunning but also enhances productivity and comfort.”
+                                </p>
+                                <div class="contentProfile">
+                                    <span id="testReview">~ Ananya Reddy</span>
+                                    <span id="reviewerInfo">Commercial Client</span>
+                                </div>
+                                <div class="profileRating">
+                                    <div class="start">
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="testimonialCard">
+                            <div class="testCardImg image3"></div>
+                            <div class="testCardContent">
+                                <p>
+                                    <span id="testQuote">
+                                    <img src="./Assets/images/testimonials/quote.svg" alt="Quote" width="48px"/>
+                                </span>
+                                    <br> “What truly stood out was their attention to detail and commitment to quality. Artevia delivered a space that exceeded our expectations in every way.”
+                                </p>
+                                <div class="contentProfile">
+                                    <span id="testReview">~ Rahul Mehta</span>
+                                    <span id="reviewerInfo">Luxury Interior Client</span>
+                                </div>
+                                <div class="profileRating">
+                                    <div class="start">
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="testimonialCard">
+                            <div class="testCardImg image4"></div>
+                            <div class="testCardContent">
+                                <p>
+                                    <span id="testQuote">
+                                    <img src="./Assets/images/testimonials/quote.svg" alt="Quote" width="48px"/>
+                                </span>
+                                    <br> “The team brought a perfect balance of creativity and functionality to our workspace. The result is not only visually stunning but also enhances productivity and comfort.”
+                                </p>
+                                <div class="contentProfile">
+                                    <span id="testReview">~ Ananya Reddy</span>
+                                    <span id="reviewerInfo">Commercial Client</span>
+                                </div>
+                                <div class="profileRating">
+                                    <div class="start">
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                        <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonialCardNext">
+                    <img src="./Assets/images/chevron-compact-right.svg" alt="Previous image" width="48px" />
+                </div>
+
+
+                <!-- card controlls -->
+                <div class="testCardControllers">
+                    <span class="testCardCircle"></span>
+                    <span class="testCardCircle"></span>
+                    <span class="testCardCircle"></span>
+                    <span class="testCardCircle"></span>
+                </div>
+            </div>
+            <div class="learMoreCTA ctaActionControllers mt-24">
+                <button class="secondaryctaBtn LrnMore" type="button">
+                    View All Testimonials <span></span>
+                </button>
+            </div>
+
+            <div class="smallTestCards mt-24">
+                <div class="smallTestCard">
+                    <div class="testCardImg image2"></div>
+                    <div class="testCardContent">
+                        <p>
+                            “Artevia transformed our vision into a space that feels both elegant and deeply personal. Every detail was thoughtfully executed, and the entire process was seamless from start to finish.”
+                        </p>
+                        <div class="contentProfile">
+                            <span id="testReview">~ Ananya Reddy</span>
+                            <span id="reviewerInfo">Commercial Client</span>
+                        </div>
+                        <div class="profileRating">
+                            <div class="start">
+                                <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="smallTestCard">
+                    <div class="testCardImg image3"></div>
+                    <div class="testCardContent">
+                        <p>
+                            “The team brought a perfect balance of creativity and functionality to our workspace. The result is not only visually stunning but also enhances productivity and comfort.”
+                        </p>
+                        <div class="contentProfile">
+                            <span id="testReview">~ Rahul Mehta</span>
+                            <span id="reviewerInfo">Luxury Interior Client</span>
+                        </div>
+                        <div class="profileRating">
+                            <div class="start">
+                                <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                                <img src="./Assets/images/testimonials/star-fill.svg" alt="star" width="21px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="blogs themeBg-white">
+            <header class="titleWrap">
+                <h2>Our Blog</h2>
+                <p class="titleCaption">
+                    Insights and inspiration for designing timeless, functional interiors.
+                </p>
+            </header>
+            <div class="blogLayout mt-24">
+
+                <div class="flexBlog">
+                    <div class="blogCard featured">
+                        <div class="blogCardImg">
+                            <img src="./Assets/images/blogs/blog1.webp" alt="blog image" width="100%" />
+                        </div>
+                        <div class="designGuide">
+                            <div class="blogReadTime">Design Guide</div>
+                        </div>
+                        <h3 class="blogCardCap titleCaption">
+                Top Interior Design Trends Shaping Modern Homes
+            </h3>
+                        <div class="blogCardContent mt-16">
+                            <p>
+                                Explore the evolving trends that define contemporary interiors—from warm minimalism and natural textures to statement lighting and functional layouts that elevate everyday living. Discover how thoughtful design choices can transform your space into a
+                                perfect balance of style and comfort.
+                            </p>
+                        </div>
+                        <div class="blogCardController">
+                            <div class="LrnMore mt-16">
+                                <a href="#">Explore Article<span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="blogsGrid">
+                    <div class="blogCard">
+                        <div class="blogCardImg">
+                            <img src="./Assets/images/blogs/blog3.webp" alt="blog image" width="100%" />
+                        </div>
+                        <div class="blogCardInfo">
+                            <div class="publishDate">April 02, 2026</div>
+                            <div class="blogReadTime">5 min read</div>
+                        </div>
+                        <h3 class="blogCardCap titleCaption">
+                Modern Office Interiors That Boost Productivity
+            </h3>
+                        <div class="blogCardContent mt-16">
+                            <p>
+                                Learn how strategic design, lighting, and spatial planning can transform workspaces into environments that inspire focus and efficiency.
+                            </p>
+                        </div>
+                        <div class="blogCardController">
+                            <div class="LrnMore mt-16">
+                                <a href="#">Explore Article<span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blogCard">
+                        <div class="designGuide">
+                            <div class="publishDate">Design Guide</div>
+                        </div>
+                        <h3 class="blogCardCap titleCaption">
+                Luxury Kitchen Design: Layout & Materials
+            </h3>
+                        <div class="blogCardContent mt-16">
+                            <p>
+                                Discover how to design a premium kitchen with smart layouts, elegant finishes, and materials that balance beauty with everyday functionality.
+                            </p>
+                        </div>
+                        <div class="blogCardController">
+                            <div class="LrnMore mt-16">
+                                <a href="#">Explore Article<span></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="learMoreCTA ctaActionControllers mt-24">
+                <button class="secondaryctaBtn LrnMore" type="button">
+                    View All Blog Posts <span></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Get Stated CTA -->
+        <section class="bottomCTA themeBg" id="bottomCTA">
+            <header class="titleWrap t-center">
+                <h2>Ready to Transform Your Space?</h2>
+                <p class="titleCaption">
+                    Connect with our design team to discuss your ideas, timeline, and budget—we’ll guide you every step of the way.
+                </p>
+
+                <div class="learMoreCTA ctaActionControllers mt-24">
+                    <a class="secondaryctaBtn LrnMore mt-16" href="#contact">
+             Start Your Project<span></span>
+        </a>
+                </div>
+
+
+
+        </section>
+
+        <!-- contact us -->
+        <section class="contactUs themeBg-white" id="contact">
+            <header class="titleWrap">
+                <h2>Contact Us</h2>
+                <p class="titleCaption">
+                    Have a project in mind or need expert design guidance? Get in touch with Artevia—we’d love to hear from you.
+                </p>
+            </header>
+            <div class="contactRow mt-24">
+                <form action="javascript:void(0)" class="contactForm">
+                    <div class="formFields">
+                        <div class="formField">
+                            <label for="username">Full Name:</label>
+                            <input type="text" id="username" aria-required="true" autocomplete="true" required/>
+                        </div>
+                        <div class="formField">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" aria-required="true" autocomplete="true" required/>
+                        </div>
+                        <div class="formField">
+                            <label for="phone">Phone:</label>
+                            <input type="tel" id="phone" aria-required="true" autocomplete="true" required />
+                        </div>
+                        <div class="formField">
+                            <select type="text" name="projettype">
+                                <option value="" disabled selected>Project Type</option>
+                                <option value="Residential Design">Residential Design</option>
+                                <option value="Commercial Design">Commercial Design</option>
+                                <option value="Luxury Interiors">Luxury Interiors</option>
+                                <option value="Renovation / Remodeling">Renovation / Remodeling</option>
+                                <option value="Consultation Only">Consultation Only</option>
+
+                            </select>
+                        </div>
+                        <div class="formField">
+                            <select type="text" name="Budget">
+                                <option value="" disabled selected>Budget</option>
+                                <option value="Below ₹5 Lakhs">Below ₹5 Lakhs</option>
+                                <option value="₹5 – ₹15 Lakhs">₹5 – ₹15 Lakhs</option>
+                                <option value="₹15 – ₹50 Lakhs">₹15 – ₹50 Lakhs</option>
+                                <option value="Renovation / Remodeling">Renovation / Remodeling</option>
+                                <option value="₹50 Lakhs+">₹50 Lakhs+</option>
+
+                            </select>
+                        </div>
+                        <div class="formField">
+                            <textarea name="projectDetails" rows="4" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <header class="learMoreCTA ctaActionControllers mt-24">
+                        <button class="primaryctaBtn LrnMore mt-16" type="submit">
+                            Send Inquiry <span></span>
+                        </button>
+                    </header>
+                    <div class=".controllersInfo respNote">
+                        We typically respond within 24 hours.
+                    </div>
+
+                </form>
+
+                <div class="contactInfoBlock">
+                    <h3 class="titleCaption">Contact Information Block</h3>
+
+                    <div class="addressBlock mt-16">
+                        <div class="officeTitlte">
+                            <span class="building-icon">
+                            <img src="./Assets/images/contact/building-check.svg" alt="office icon" width="18px">
+                        </span>
+                            <h3>Office Address</h3>
+                        </div>
+                        <address>
+                        <b>Artevia Design Studio </b> <br>
+                        2nd Floor, Lakshmi Tech Park 
+                        OMR Road, Thoraipakkam 
+                        Chennai, Tamil Nadu 600097 
+                        India
+                    </address>
+                    </div>
+                    <div class="contactBlock mt-16">
+                        <div class="phoneTitle">
+                            <span class="phone-icon">
+                            <img src="./Assets/images/contact/telephone-forward-fill.svg" alt="phone" width="18px">
+                        </span>
+                            <h3>Phone</h3>
+                        </div>
+                        <div class="contactPhone">
+                            <div class="phone">
+                                <span class="phone-icon"></span> +91 98765 43210
+                            </div>
+                            <div class="phone">
+                                <span class="phone-icon"></span> +91 91234 56789
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="contactMailsBlock mt-16">
+                        <div class="emailTitle">
+
+                            <span class="phone-icon">
+                        <img src="./Assets/images/contact/envelope-arrow-up-fill.svg" alt="email" width="18px">
+                    </span>
+                            <h3>Email</h3>
+                        </div>
+                        <div class="contactMail">
+                            <div class="Email">
+                                <span class="email-icon"></span> hello@artevia.design
+                            </div>
+
+                            <div class="Email">
+                                <span class="email-icon"></span> support@artevia.design
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="contactHoursBlock mt-16">
+                        <div class="hoursTitle">
+                            <span class="clock-icon">
+                        <img src="./Assets/images/contact/clock-fill.svg" alt="call" width="18px">
+                    </span>
+                            <h3>Working Hours</h3>
+                        </div>
+                        <div class="timings">
+                            Monday – Saturday: 10:00 AM – 7:00 PM
+                        </div>
+                        <div class="timings">
+                            <span class="phone-icon"></span> Sunday: Closed
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="arteviaFooter">
+        <div class="footerRow">
+            <div class="footerCol">
+                <div class="footerLogo ">
+                    <a href="/" aria-label="Artevia home">
+                        <h1>ARTEVIA</h1>
+                    </a>
+                </div>
+                <div class="footerLogoCaption  mt-24">
+                    <h3 class="titleCaption">
+                                <span id="testQuote">
+                                    <img src="./Assets/images/testimonials/quote.svg" alt="Quote" width="48px"/>
+                                </span>
+                        "Where thoughtful design meets timeless elegance."
+                    </h3>
+                </div>
+                <div class="footerSocialLinks mt-24">
+                    <a href="#" class="socialIcon">
+                        <img src="./Assets/images/footer/facebook.svg" alt="facebook icon" width="24px">
+                    </a>
+                    <a href="#" class="socialIcon">
+                        <img src="./Assets/images/footer/whatsapp.svg" alt="whatsapp icon" width="24px">
+                    </a>
+                    <a href="#" class="socialIcon">
+                        <img src="./Assets/images/footer/linkedin.svg" alt="linkedin icon" width="24px">
+                    </a>
+                    <a href="#" class="socialIcon">
+                        <img src="./Assets/images/footer/twitter-x.svg" alt="twitter-x icon" width="24px">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footerCol">
+                <div class="quickLinksWrap">
+                    <h3 class="titleCaption">Services</h3>
+                    <ul class="quickLinks mt-16">
+                        <li>
+                            <a href="#">Residential Design</a>
+                        </li>
+                        <li>
+                            <a href="#">Commercial Design</a>
+                        </li>
+                        <li>
+                            <a href="#">Luxury Interiors</a>
+                        </li>
+                        <li>
+                            <a href="#">Full-Service Renovation</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="footerCol">
+                <div class="quickLinksWrap">
+                    <h3 class="titleCaption">Quick Links</h3>
+                    <ul class="quickLinks mt-16">
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="#">Blogs</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyRights">© 2026 Artevia. All rights reserved.</div>
+    </footer>
+
+    <!-- Get Started Dialog -->
+    <dialog id="getStartedDialog" aria-modal="true" aria-labelledby="getstarted-modal">
+        <h1>Lorem ipsum</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora voluptates maiores laborum commodi quaerat corporis vel provident eos, animi quia eaque vitae soluta ducimus repudiandae voluptas, cumque omnis nisi obcaecati.
+        </p>
+        <button>close</button>
+    </dialog>
+
+    <dialog id="lightBoxDialog" aria-modal="true" aria-labelledby="lightBoxImage-modal">
+        <div class="lightBoxImageView">
+            <div class="closeModalController">
+                <img src="./Assets/images/portfolio/x-square.svg" alt="close" width="42px" />
+            </div>
+            <div class="prevImg">
+                <img src="./Assets/images/chevron-compact-left.svg" alt="Previous image" width="100%" />
+            </div>
+            <img src="./Assets/images/portfolio/thumb1.webp" width="100%" id="lightBoxImage" />
+            <div class="nextImg">
+                <img src="./Assets/images/chevron-compact-right.svg" alt="Next image" width="100%" />
+            </div>
+        </div>
+    </dialog>
+    <!-- scripts -->
+    <script src="./Assets/js/preloader.js"></script>
+    <script src="./Assets/js/header.js"></script>
+    <script src="./Assets/js/banner.js"></script>
+    <script src="./Assets/js/about.js" defer></script>
+    <script src="./Assets/js/services.js" defer></script>
+    <script src="./Assets/js/portfolio.js" defer></script>
+    <script src="./Assets/js/testimonials.js" defer></script>
+    <script src="./Assets/js/contact.js" defer></script>
+</body>
+
+</html>

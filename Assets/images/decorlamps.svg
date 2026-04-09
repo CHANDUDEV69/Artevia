@@ -1,0 +1,49 @@
+<svg id="ArteviaLamps" width="300px" height="300px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+                        <defs>
+                            <!-- lamp finishing -->
+                             <linearGradient id="lampFinishing">
+                                <stop offset="5%" stop-color="#fff9ed" />
+                                <stop offset="10%" stop-color="#fff9ed" />
+                                <stop offset="60%" stop-color="#fff2d4" />
+                             </linearGradient>
+                             <!-- lamp2 finishing -->
+                             <linearGradient id="lampFinishing2">
+                                <stop offset="1%" stop-color="#fff9ed" />
+                                <stop offset="65%" stop-color="#fff9ed" />
+                                <stop offset="100%" stop-color="#fff2d4" />
+                             </linearGradient>
+                             <!-- lamp stroke -->
+                             <linearGradient id="lampStroke">
+                                <stop offset="5%" stop-color="#fff9ed" />
+                                <stop offset="10%" stop-color="#fff2d4" />
+                                <stop offset="60%" stop-color="#ffe0a9" />
+                             </linearGradient>
+                            <!-- lamp lighting -->
+                             <filter id="lightFilter">
+                                 <feSpecularLighting
+                                   result="specOut" 
+                                   surfaceScale="1"
+                                   specularExponent="20"
+                                   lighting-color="#fff">
+                                   <fePointLight x="50" y="75" z="20" />
+                                 </feSpecularLighting>
+                                 <feComposite
+                                   in="SourceGraphic"
+                                   in2="specOut"
+                                   operator="arithmetic"
+                                   k1="0"
+                                   k2="1"
+                                   k3="1"
+                                   k4="0" />
+                                 </filter>
+                              </defs>
+                        <!-- Artevia lamp1 -->
+                        <line x1="50" y1="0" x2="50" y2="100" stroke="#ccc3" stroke-width="2" />
+                        <path d="M 0 150 A 10 10 0 1 1 100 150" fill="url(#lampFinishing)"  stroke="url(#lampStroke)" stroke-width="0" filter="url(#lightFilter)" />
+                        <ellipse cx="50" cy="150" rx="50" ry="5" fill="#fff9ed" />
+
+                        <!-- Artevia lamp2 -->
+                        <line x1="150" y1="0" x2="150" y2="200" stroke="#ccc3" stroke-width="2" />
+                        <path d="M 100 250 A 10 10 0 1 1 200 250" fill="url(#lampFinishing2)"  stroke="url(#lampStroke)" stroke-width="1" filter="url(#lightFilter)" />
+                        <ellipse cx="150" cy="250" rx="50" ry="5" fill="#fff2d4" />
+                    </svg>

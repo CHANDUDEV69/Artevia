@@ -1,0 +1,17 @@
+/* Display Playfair */
+@font-face {
+  font-family: "Playfair";
+  src: url("./fonts/playfair/Playfair-VariableFont_opsz\,wdth\,wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+/* Lato */
+@font-face {
+  font-family: "Lato";
+  src: url("./fonts/lato/Lato-Regular.woff2") format("woff2"),
+     url("./fonts/lato/Lato-Bold.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

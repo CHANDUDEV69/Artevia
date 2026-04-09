@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artevia</title>
+    <link rel="shortcut icon" href="./Assets/images/circle.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./Assets/css/fonts.css" />
+    <link rel="stylesheet" href="./Assets/css/responsive/mobile.css" media="(max-width: 1024px)" />
+    <link rel="stylesheet" href="./Assets/css/responsive/desktop.css" media="(min-width: 1025px)" />
+    <link rel="stylesheet" href="./Assets/css/style.css" />
+    <link rel="stylesheet" href="./Assets/css/responsive/color-sceme.css" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader active">
+        <div class="loadingInfo">
+            <div class="loadAnimation">
+                <span class="loaingText">Loading</span>
+                <div class="dots">
+                    <span class="dot dot1" style="--i: 0"></span>
+                    <span class="dot dot2" style="--i: 1"></span>
+                    <span class="dot dot3" style="--i: 2"></span>
+                </div>
+            </div>
+            <div class="loadingContent mt-16">
+                <ul class="loadingContentInfo">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Artevia Navigation Header -->
+    <header class="header ThemeBg">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="/" aria-label="Artevia home">
+                <h1>ARTEVIA</h1>
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navLinksWrap">
+
+            <!-- Hamburger (button, not div) -->
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="line1" aria-hidden="true"></span>
+                <span class="line2" aria-hidden="true"></span>
+                <span class="line3" aria-hidden="true"></span>
+            </button>
+
+            <nav id="primary-navigation" class="navGroup">
+                <ul class="navLinks">
+                    <li class="hoverfloat" aria-hidden="true"></li>
+
+                    <li>
+                        <a href="/" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#services">Our Services</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+
+                <ul class="navCTA">
+                    <li>
+                        <a href="#bottomCTA">Get a Free Consultation</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <!-- Menu Toggler -->
+    <div class="menuToggleWrap">
+        <button class="menuToggler invisible" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation" title="Menu">
+            <span class="line1" aria-hidden="true"></span>
+            <span class="line2" aria-hidden="true"></span>
+            <span class="line3" aria-hidden="true"></span>
+        </button>
+    </div>
+
+
+
+    <main>
+        <section class="aboutHero">
+            <header class="titleWrap t-center">
+                <h2>Designing Spaces That Reflect You</h2>
+                <p class="titleCaption mt-24">
+                    At Artevia, we believe every space tells a story—our mission is to shape that story with elegance, purpose, and timeless design.
+                </p>
+                <div class="ctaActionControllers mt-24">
+                    <a href="#contact" class="primaryctaBtn" type="a" aria-haspopup="dialog">
+                            Start Your Project
+                        </a>
+
+                    <a class="secondaryctaBtn" href="#portfolio">
+                            Explore Our Work
+                        </a>
+                </div>
+            </header>
+        </section>
+        <!-- about -->
+        <section class="aboutBlog themeBg-white">
+            <div class="aboutBlogCol aboutBlogCol1">
+                <header class="titleWrap">
+                    <h2>About Artevia</h2>
+                    <p class="titleCaption mt-24">
+                        At Artevia, we create interiors that go beyond aesthetics—they are thoughtfully designed environments that enhance how you live, work, and experience your space. Our approach blends creativity with functionality, ensuring that every design is not only
+                        visually striking but also practical and enduring. From residential homes to commercial spaces, we craft interiors that reflect individuality, purpose, and refined taste.
+                    </p>
+                    <p class="titleCaption mt-16">
+                        We take a collaborative approach, listening closely to your vision and translating it into thoughtfully curated spaces that balance aesthetics with practicality. By combining high-quality materials, smart planning, and refined craftsmanship, we create
+                        environments that are not only visually striking but also deeply livable.
+                    </p>
+                </header>
+            </div>
+            <div class="aboutBlogCol aboutBlogCol2"></div>
+
+        </section>
+        <!-- Design PHILOSOPHY -->
+        <section class="philosophy">
+            <header class="titleWrap t-center">
+                <h2>Our Design Philosphy</h2>
+                <p class="titleCaption">
+                    We believe that great design is a balance between beauty and purpose. Every project begins with understanding the client’s vision, lifestyle, and aspirations.
+                </p>
+            </header>
+            <!-- Our philosophy is rooted in: -->
+            <div class="cardsSmall philosophyCards mt-24">
+
+                <div class="philosophyCard t-center">
+                    <div class="phiCardIcon">
+                        <img src="./Assets/images/about/fill-solid-full.svg" alt="icon" width="60px" />
+                    </div>
+                    <div class="phiCardContent">
+                        <h3 class="titleCaption">
+                                            Timeless Design 
+                                        </h3>
+                        <p class="mt-16">
+                            Creating spaces that remain elegant for years
+                        </p>
+                    </div>
+                </div>
+
+                <div class="philosophyCard t-center">
+                    <div class="phiCardIcon">
+                        <img src="./Assets/images/about/mattress-pillow-solid-full.svg" alt="icon" width="60px" />
+                    </div>
+                    <div class="phiCardContent">
+                        <h3 class="titleCaption">
+                                            Functional Living
+                                        </h3>
+                        <p class="mt-16">
+                            Designing for comfort and usability
+                        </p>
+                    </div>
+                </div>
+
+                <div class="philosophyCard t-center">
+                    <div class="phiCardIcon">
+                        <img src="./Assets/images/about/ranking-star-solid-full.svg" alt="icon" width="60px" />
+                    </div>
+                    <div class="phiCardContent">
+                        <h3 class="titleCaption">
+                                            Material Integrity
+                                        </h3>
+                        <p class="mt-16">
+                            Using quality materials that elevate experience
+                        </p>
+                    </div>
+                </div>
+
+                <div class="philosophyCard t-center">
+                    <div class="phiCardIcon">
+                        <img src="./Assets/images/about/ruler-horizontal-solid-full.svg" alt="icon" width="60px" />
+                    </div>
+                    <div class="phiCardContent">
+                        <h3 class="titleCaption">
+                                            Attention to Detail
+                                        </h3>
+                        <p class="mt-16">
+                            Every element is intentional
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="philCardQuote t-center mt-24">
+
+                <p>We don’t just design spaces—we curate experiences.</p>
+            </div>
+
+            </div>
+
+
+        </section>
+        <!-- Our Process -->
+        <section class="process themeBg-white">
+            <header class="titleWrap">
+                <h2>Our Process</h2>
+                <p class="titleCaption">
+                    We believe that great design is a balance between beauty and purpose. Every project begins with understanding the client’s vision, lifestyle, and aspirations.
+                </p>
+            </header>
+            <div class="processCards cardsSmall mt-24">
+                <div class="processCard processCard1">
+                    <div class="prsCardIcon">
+                        <img src="./Assets/images/about/handshake-regular-full.svg" alt="icon" width="60px" />
+                    </div>
+                    <h2 class="titleCaption">
+                                Consultation
+                            </h2>
+                    <div class="processCardContent mt-16">
+                        <p>
+                            We begin by understanding your vision, space, and requirements.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="processCard processCard2">
+                    <div class="prsCardIcon">
+                        <img src="./Assets/images/about/lightbulb-regular-full.svg" alt="icon" width="60px" />
+                    </div>
+                    <h2 class="titleCaption">
+                                Concept Development
+                            </h2>
+                    <div class="processCardContent mt-16">
+                        <p>
+                            We translate ideas into mood boards, layouts, and design directions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="processCard processCard3">
+                    <div class="prsCardIcon">
+                        <img src="./Assets/images/about/bezier-curve-solid-full.svg" alt="icon" width="60px" />
+                    </div>
+                    <h2 class="titleCaption">
+                                Design Execution
+                            </h2>
+                    <div class="processCardContent mt-16">
+                        <p>
+                            Every detail is refined—from materials to finishes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="processCard processCard4">
+                    <div class="prsCardIcon">
+                        <img src="./Assets/images/about/flag-checkered-solid-full.svg" alt="icon" width="60px" />
+                    </div>
+                    <h2 class="titleCaption">
+                                Delivery
+                            </h2>
+                    <div class="processCardContent mt-16">
+                        <p>
+
+                            We ensure seamless execution and a finished space that exceeds expectations.
+                        </p>
+                    </div>
+                </div>
+        </section>
+
+        <section class="achivements">
+            <header class="titleWrap t-center">
+                <h2>Our Statistics</h2>
+                <p class="titleCaption">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </p>
+            </header>
+            <div class="achiveRow cardsSmall mt-24">
+                <div class="achiveCounter t-center">
+                    <h3>
+                            120 <span>
+                                +
+                            </span>  
+                        </h3>
+                    <div class="titleCaption">
+                        Design Concepts Delivered
+                    </div>
+                </div>
+                <div class="achiveCounter t-center">
+                    <h3>
+                            45
+                            <span>
+                                +
+                            </span>
+                        </h3>
+                    <div class="titleCaption">Expert Designers</div>
+                </div>
+                <div class="achiveCounter t-center">
+                    <h3>
+                            25 <span> +</span>
+                        </h3>
+                    <div class="titleCaption">
+                        Cities Served
+                    </div>
+                </div>
+                <div class="achiveCounter t-center">
+                    <h3>
+                            98 
+                            <span>%</span>
+                        </h3>
+                    <div class="titleCaption">
+                        Client Satisfaction
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="team themeBg-white">
+            <header class="titleWrap">
+                <h2>Meet Our Designers</h2>
+            </header>
+            <div class="designersGrid">
+                <p class="titleCaption mt-24">
+                    Our team is made up of passionate designers, architects, and creative thinkers who share a common goal—creating spaces that inspire. Each member brings a unique perspective, allowing us to deliver designs that are innovative, refined, and tailored to
+                    every client.
+                </p>
+                <div class="designers cardsSmall mt-24">
+                    <div class="designerProfile">
+                        <div class="dfImage">
+                            <img src="./Assets/images/about/team/team1.webp" alt="team profile image" width="210px" />
+                        </div>
+                        <div class="dName">
+                            <h2 class="titleCaption">Priya Nair</h2>
+                        </div>
+                        <div class="dRole">
+                            <p>
+                                Lead Designer
+                            </p>
+                        </div>
+                        <div class="dSocial">
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/facebook.svg" alt="facebook icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/whatsapp.svg" alt="whatsapp icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/linkedin.svg" alt="linkedin icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/twitter-x.svg" alt="twitter-x icon" width="24px">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="designerProfile">
+                        <div class="dfImage">
+                            <img src="./Assets/images/about/team/team2.webp" alt="team profile image" width="210px" />
+                        </div>
+                        <div class="dName">
+                            <h2 class="titleCaption">Amit Roy</h2>
+                        </div>
+                        <div class="dRole">
+                            <p>
+                                Senior Architecture
+                            </p>
+                        </div>
+                        <div class="dSocial">
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/facebook.svg" alt="facebook icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/whatsapp.svg" alt="whatsapp icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/linkedin.svg" alt="linkedin icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/twitter-x.svg" alt="twitter-x icon" width="24px">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="designerProfile">
+                        <div class="dfImage">
+                            <img src="./Assets/images/about/team/team3.webp" alt="team profile image" width="210px" />
+                        </div>
+                        <div class="dName">
+                            <h2 class="titleCaption">Tina Mehra</h2>
+                        </div>
+                        <div class="dRole">
+                            <p>
+                                Interior Designer
+                            </p>
+                        </div>
+                        <div class="dSocial">
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/facebook.svg" alt="facebook icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/whatsapp.svg" alt="whatsapp icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/linkedin.svg" alt="linkedin icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/twitter-x.svg" alt="twitter-x icon" width="24px">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="designerProfile">
+                        <div class="dfImage">
+                            <img src="./Assets/images/about/team/team4.webp" alt="team profile image" width="210px" />
+                        </div>
+                        <div class="dName">
+                            <h2 class="titleCaption">Vikaram Patel</h2>
+                        </div>
+                        <div class="dRole">
+                            <p>
+                                Project Manager
+                            </p>
+                        </div>
+                        <div class="dSocial">
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/facebook.svg" alt="facebook icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/whatsapp.svg" alt="whatsapp icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/linkedin.svg" alt="linkedin icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/twitter-x.svg" alt="twitter-x icon" width="24px">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="whyChooseUs themeBg-white t-center">
+            <header class="titleWrap">
+                <h2>Why Choose Artevia</h2>
+                <p class="titleCaption">
+                    Thougtful design, seamless execution, and a client-first approach that brings timeless interiors to life.
+                </p>
+                <div class="whyChooseGrid  mt-24">
+                    <div class="whyChContent cardsSmall">
+                        <div class="whyChCard">
+                            <div class="cardImg">
+                                <img src="./Assets/images/about/whychoose/lines-leaning-solid-full.svg" width="60px" />
+                            </div>
+                            <div class="cardTitle">
+                                <h3 class="titleCaption">
+                                Personalized design approach
+                                </h3>
+                            </div>
+                            <div class="cardContent mt-16">
+                                <p>
+                                    Every project is tailored to your lifestyle, taste, and functional needs.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="whyChCard">
+                            <div class="cardImg">
+                                <img src="./Assets/images/about/whychoose/hourglass-half-regular-full.svg" width="60px" />
+                            </div>
+                            <div class="cardTitle">
+                                <h3 class="titleCaption">
+                                Timeless Design
+                                </h3>
+                            </div>
+                            <div class="cardContent mt-16">
+                                <p>
+                                    We create interiors that feel elegant today and remain relevant for years to come.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="whyChCard">
+                            <div class="cardImg">
+                                <img src="./Assets/images/about/whychoose/wand-sparkles-solid-full.svg" width="60px" />
+                            </div>
+                            <div class="cardTitle">
+                                <h3 class="titleCaption">
+                                Attention to detail
+                                </h3>
+                            </div>
+                            <div class="cardContent mt-16">
+                                <p>
+                                    Every project is tailored to your lifestyle, taste, and functional needs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="whyChCard">
+                            <div class="cardImg">
+                                <img src="./Assets/images/about/whychoose/gears-solid-full.svg" width="60px" />
+                            </div>
+                            <div class="cardTitle">
+                                <h3 class="titleCaption">
+                                End-to-End Execution
+                                </h3>
+                            </div>
+                            <div class="cardContent mt-16">
+                                <p>
+                                    We guide your project from concept and planning to final styling and delivery.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="whyChCard">
+                            <div class="cardImg">
+                                <img src="./Assets/images/about/whychoose/gem-regular-full.svg" width="60px" />
+                            </div>
+                            <div class="cardTitle">
+                                <h3 class="titleCaption">
+                                Quality Meterials
+                                </h3>
+                            </div>
+                            <div class="cardContent mt-16">
+                                <p>
+                                    We prioritize refined finishes and meterials that elevate both aesthtics and durability.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="whyChCard">
+                            <div class="cardImg">
+                                <img src="./Assets/images/about/whychoose/handshake-regular-full.svg" width="60px" />
+                            </div>
+                            <div class="cardTitle">
+                                <h3 class="titleCaption">
+                                Client-Centered Process
+                                </h3>
+                            </div>
+                            <div class="cardContent mt-16">
+                                <p>
+                                    We collabarate closely with you to ensure the final result feels personal and complete.
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="whyChooseSideImg">
+                        <img src="./Assets/images/about/thumb1.webp" alt="">
+                    </div>
+                </div>
+            </header>
+        </section>
+
+        <!-- about CTA -->
+        <section class="bottomCTA about">
+            <header class="titleWrap t-center">
+                <h2>Let’s Create Something Exceptional </h2>
+                <p class="titleCaption mt-24">
+                    Whether you’re starting fresh or transforming an existing space, Artevia is here to guide you every step of the way.
+                    <header class="learMoreCTA ctaActionControllers mt-24">
+                        <button class="primaryctaBtn LrnMore mt-16" type="submit">
+                            Start Your Project <span></span>
+                        </button>
+                    </header>
+                </p>
+            </header>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="arteviaFooter">
+        <div class="footerRow">
+            <div class="footerCol">
+                <div class="footerLogo ">
+                    <a href="/" aria-label="Artevia home">
+                        <h1>ARTEVIA</h1>
+                    </a>
+                </div>
+                <div class="footerLogoCaption  mt-24">
+                    <h3 class="titleCaption">
+                                <span id="testQuote">
+                                    <img src="./Assets/images/testimonials/quote.svg" alt="Quote" width="48px"/>
+                                </span>
+                        "Where thoughtful design meets timeless elegance."
+                    </h3>
+                </div>
+                <div class="footerSocialLinks mt-24">
+                    <a href="#" class="socialIcon">
+                        <img src="./Assets/images/footer/facebook.svg" alt="facebook icon" width="24px">
+                    </a>
+                    <a href="#" class="socialIcon">
+                        <img src="./Assets/images/footer/whatsapp.svg" alt="whatsapp icon" width="24px">
+                    </a>
+                    <a href="#" class="socialIcon">
+                        <img src="./Assets/images/footer/linkedin.svg" alt="linkedin icon" width="24px">
+                    </a>
+                    <a href="#" class="socialIcon">
+                        <img src="./Assets/images/footer/twitter-x.svg" alt="twitter-x icon" width="24px">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footerCol">
+                <div class="quickLinksWrap">
+                    <h3 class="titleCaption">Services</h3>
+                    <ul class="quickLinks mt-16">
+                        <li>
+                            <a href="#">Residential Design</a>
+                        </li>
+                        <li>
+                            <a href="#">Commercial Design</a>
+                        </li>
+                        <li>
+                            <a href="#">Luxury Interiors</a>
+                        </li>
+                        <li>
+                            <a href="#">Full-Service Renovation</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="footerCol">
+                <div class="quickLinksWrap">
+                    <h3 class="titleCaption">Quick Links</h3>
+                    <ul class="quickLinks mt-16">
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="#">Blogs</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="copyRights">© 2026 Artevia. All rights reserved.</div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="./Assets/js/preloader.js"></script>
+    <script src="./Assets/js/header.js"></script>
+</body>
+
+</html>

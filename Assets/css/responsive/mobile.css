@@ -1,0 +1,196 @@
+@media screen and (max-width: 1024px) {
+  .header {
+    position: relative;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footerRow {
+    padding: 1rem 1.5rem;
+  }
+  section {
+    padding: 1.5rem;
+  }
+  .header .navLinksWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header.mobileMenu {
+    position: fixed;
+    opacity: 1 !important;
+    transform: translateY(0%) !important;
+  }
+  .header .hamburger {
+    width: 21px;
+    height: 21px;
+    border: 1px solid transparent;
+    background: transparent;
+  }
+  .header .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2.1px;
+    background: var(--brown-950);
+    transition: 0.3s;
+  }
+  .header .hamburger span.line1 {
+    margin-top: 0px;
+  }
+  .header .hamburger span.line2 {
+    margin-top: 6px;
+  }
+  .header .hamburger span.line3 {
+    margin-top: 6px;
+  }
+  .hamburger.active .line1 {
+    transform: translate(-1px, 8px) rotateZ(-45deg) !important;
+  }
+  .hamburger.active .line2 {
+    transform: translate(-0px, 0px) rotateZ(45deg) !important;
+  }
+  .hamburger.active .line3 {
+    opacity: 0;
+  }
+  .navGroup {
+    position: absolute;
+    width: 100%;
+    width: calc(100% - 2px);
+    box-sizing: border-box;
+    margin-left: 1px;
+    left: 0;
+    top: 0;
+    padding: 24px 1.5rem 42px 24px;
+    background: var(--brown-50);
+    margin-top: -120%;
+    transition: 0.6s ease-in-out;
+    opacity: 0.3;
+    z-index: -1;
+    border-bottom: 1px solid var(--brown-950);
+  }
+  .navGroup.active {
+    margin-top: 72px;
+    opacity: 1;
+  }
+  .header .navLinksWrap li {
+    list-style-type: none;
+  }
+  .header .navLinksWrap li a {
+    display: block;
+    position: relative;
+    padding-block: 12px;
+    font-weight: 500;
+  }
+  .navGroup .navCTA li a {
+    margin-top: 10px;
+  }
+  .banner {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .decoLights {
+    display: grid;
+  }
+  .decoLight {
+    width: 50% !important;
+    height: 50% !important;
+  }
+
+  .decoLight2,
+  .decoLight3 {
+    display: none;
+  }
+  .bannerContentWrap {
+    grid-row: 2 / 3;
+  }
+  .banner .bannerContentWrap {
+    padding-top: 0.9rem;
+  }
+  .banner .bannerImage {
+    width: 100%;
+    overflow: hidden;
+  }
+  .bannerImage img {
+    width: 100%;
+  }
+  .about .aboutRow {
+    display: grid;
+
+    grid-template-columns: 1fr !important;
+  }
+  .decorLamps {
+    transform: translate(72vw, -50%) !important;
+    scale: 0.6;
+    opacity: 1;
+    z-index: 1;
+  }
+  .aboutImageWrap {
+    padding: 5.1rem 0.6rem !important;
+  }
+  .aboutCounters {
+    position: relative;
+    width: 100%;
+    grid-template-columns: repeat(1, minmax(150px, 1fr)) !important;
+    margin-block: 24px;
+  }
+  .aboutCounters .aboutCounter {
+    align-content: center !important;
+    background: rgba(255, 250, 237, 0.604);
+    border: 3px solid var(--brown-50);
+  }
+  .servicesGrid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(clamp(420px, 30vw, 500px), 1fr)
+    ) !important;
+  }
+
+  /* contact us */
+  .contactRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .aboutFluidContent {
+    display: none;
+  }
+  .mobile-none {
+    display: block !important;
+  }
+  .testimonialCard {
+    display: block !important;
+  }
+  .testCardImg {
+    height: 300px !important;
+    /* max-height: 300px; */
+  }
+  .testimonialCardPrev,
+  .testimonialCardNext {
+    display: none !important;
+  }
+  .testCardContent .contentProfile {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .testCardImg {
+    min-width: 100% !important;
+  }
+  .smallTestCards {
+    display: block !important;
+  }
+  .smallTestCard {
+    display: grid !important;
+    gap: 1rem;
+  }
+  .smallTestCard .testCardContent {
+    min-width: 300px;
+    padding: 0px 1rem !important;
+  }
+
+  /* blog */
+  .blogLayout {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  }
+}
