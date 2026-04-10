@@ -656,7 +656,7 @@ body:has(#lightBoxDialog[open]) {
 }
 .aboutContent p {
   line-height: 1.9;
-  max-width: 520px;
+  max-width: 1000px;
 }
 
 .aboutCounters .aboutCounter {
@@ -1420,6 +1420,8 @@ button[submit] {
   width: 100%;
 }
 .copyRights {
+  text-align: center;
+  padding-block: 0.3rem;
   border-top: 1px dashed var(--brown-950);
 }
 .footerLogoCaption {

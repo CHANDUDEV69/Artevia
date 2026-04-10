@@ -1,0 +1,1 @@
+*Note: This files will work properly in server only(also works in vscode live server)
