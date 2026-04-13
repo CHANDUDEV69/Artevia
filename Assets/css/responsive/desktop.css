@@ -8,6 +8,13 @@
   }
   section {
     padding: 4rem;
+    padding-top: 9rem;
+    opacity: 0;
+    transition: 0.6s ease-in-out;
+  }
+  section.fadeInUp{
+    padding-top: 4rem;
+    opacity: 1;
   }
   .copyRights {
     padding: 8px 64px;

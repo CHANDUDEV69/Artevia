@@ -10,6 +10,13 @@
   }
   section {
     padding: 1.5rem;
+    padding-top: 4rem;
+    opacity: 0;
+    transition: 0.6s ease-in-out;
+  }
+  section.fadeInUp{
+    padding: 1.5rem;
+    opacity: 1;
   }
   .header .navLinksWrap {
     display: flex;
@@ -138,10 +145,12 @@
     background: rgba(255, 250, 237, 0.604);
     border: 3px solid var(--brown-50);
   }
+
+  /* services */
   .servicesGrid {
     grid-template-columns: repeat(
       auto-fit,
-      minmax(clamp(420px, 30vw, 500px), 1fr)
+      minmax(clamp(300px, 30vw, 500px), 1fr)
     ) !important;
   }
 
@@ -155,6 +164,17 @@
 @media screen and (max-width: 600px) {
   .aboutFluidContent {
     display: none;
+  }
+  .banner .ctaActionControllers{
+    display: grid !important;
+    gap: 1rem;
+  }
+  .servicesGrid .serviceCard .cardRow {
+    display: grid;
+  }
+  
+  .serviceCard .cardRow .serviceCardImage{
+    min-height: 300px;
   }
   .mobile-none {
     display: block !important;
@@ -174,6 +194,11 @@
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+    /* portfolio */
+  
+.lightBoxViewGrid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+}
   .testCardImg {
     min-width: 100% !important;
   }

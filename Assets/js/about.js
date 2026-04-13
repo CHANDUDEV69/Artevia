@@ -45,16 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".aboutFluidContent").appendChild(newPara);
     }
 
-    const aboutSection = document.querySelector(".about");
-    // const abtObserver = new IntersectionObserver((entries)=>{
-    // entries.forEach((entry)=>{
-    // if(entry.isIntersecting){
     aboutMediaHandler();
-    // }
-    // })
-    // abtObserver.unobserve(aboutSection);
-    // }, {threshold: 0.2}); 
-    // abtObserver.observe(aboutSection);
 
     const aboutCounters = document.querySelectorAll(".aboutCounter");
     aboutCounters.forEach((aboutCounter) => {

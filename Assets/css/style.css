@@ -150,19 +150,44 @@ body:has(.preloader.active) {
 .loadData span {
   color: #441b06;
 }
-/* main{
-     position: relative;
-     scroll-snap-type: y proximity;
-     overflow-y: scroll;
-     height: 100dvh;
+/* Skeleton Base */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #eee7df; /* warm beige */
+  border-radius: 12px;
 }
 
-main section{
-     scroll-snap-align: start;
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: shimmer 1.5s infinite;
 }
-main::-webkit-scrollbar {
-  display: none;
-} */
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.portfolio-skeleton .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.portfolio-skeleton .card {
+  height: 220px;
+  border-radius: 16px;
+}
+
 /* Artevia Header */
 .header {
   position: relative;
@@ -409,6 +434,7 @@ p {
 .ctaActionControllers .primaryctaBtn {
   color: var(--brown-100);
   background: var(--gradient-dark);
+  border: 1px solid var(--brown-900);
 }
 .ctaActionControllers .secondaryctaBtn {
   background: var(--gradient-extra-light);
@@ -509,6 +535,9 @@ body:has(#lightBoxDialog[open]) {
   background: var(--brown-100);
   opacity: 0.9;
 }
+.portfolio{
+  box-shadow: inset 0px 30px 120px var(--brown-100);
+}
 .lightBoxImageView {
   position: absolute;
   display: flex;
@@ -516,13 +545,25 @@ body:has(#lightBoxDialog[open]) {
   align-items: center;
   width: 100%;
   min-height: 100%;
-  top: 0;
-  left: 0;
+  background: radial-gradient(
+    circle at center,
+    var(--brown-50),
+    var(--brown-100));
+  inset: 0;
   overflow: hidden;
 }
 #lightBoxDialog .lightBoxImageView img {
   border-radius: 0.3rem;
-  transition: 0.3s ease-in-out;
+  user-select: none;
+  max-width: 600px;
+  box-shadow: 0 15px 60px var(--brown-200);
+  transition: 0.5s linear;
+}
+#lightBoxDialog .lightBoxImageView img.fadeOut{
+  opacity: 0.1;
+}
+#lightBoxDialog .lightBoxImageView img.fadeIn{
+  opacity: 1;
 }
 .lightBoxImageView .prevImg,
 .lightBoxImageView .nextImg {
@@ -533,11 +574,9 @@ body:has(#lightBoxDialog[open]) {
   min-height: clamp(42px, 4.2vw, 60px);
   cursor: pointer;
   pointer-events: all;
-}
-
-.lightBoxImageView .prevImg.end,
-.lightBoxImageView .nextImg.end {
-  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.342);
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
 }
 .lightBoxImageView .prevImg {
   left: 0;
@@ -547,9 +586,15 @@ body:has(#lightBoxDialog[open]) {
   right: 0;
   margin-right: 42px;
 }
-.lightBoxImageView img {
-  user-select: none;
-  max-width: 600px;
+.lightBoxImgCounter{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 /* about */
 .about {
@@ -740,15 +785,12 @@ address b {
 }
 .bottomCTA {
   position: relative;
-  /* background:linear-gradient(135deg, #c96a1b, #a85614) !important; */
-  background: radial-gradient(
-    circle at 20% 30%,
-    var(--brown-700),
-    var(--brown-900) 60%
-  ) !important;
+  background: url("../images/lantern-pattern.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.bottomCTA.about {
-  padding-block: 7.2rem;
+.bottomCTA {
+  padding-block: 7.2rem !important;
 }
 .bottomCTA::before {
   content: "";
@@ -756,9 +798,9 @@ address b {
   inset: 0;
   background: radial-gradient(
     circle at center,
-    rgba(255, 255, 255, 0.12),
-    transparent 60%
-  );
+    var(--brown-800),
+    var(--brown-900));
+    opacity: 0.9;
   pointer-events: none;
 }
 
@@ -814,7 +856,7 @@ address b {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-columns: repeat(
     auto-fit,
-    minmax(clamp(300px, 30vw, 420px), 1fr)
+    minmax(clamp(270px, 42vw, 600px), 1fr)
   );
   gap: 1rem;
 }
@@ -877,7 +919,7 @@ address b {
 /* artevia portifolio */
 .lightBoxViewGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(510px, 1fr));
   justify-content: space-between;
   gap: 1rem;
 }
@@ -915,13 +957,18 @@ address b {
 .lightBoxImageView .prevImg,
 .lightBoxImageView .nextImg {
   cursor: pointer;
-  opacity: 0.3;
   transition: 0.12s linear;
 }
+.closeModalController,
+.lightBoxImageView .prevImg img,
+.lightBoxImageView .nextImg img {
+  opacity: 0.5;
+}
 .closeModalController:hover,
-.lightBoxImageView .prevImg:hover,
-.lightBoxImageView .nextImg:hover {
+.lightBoxImageView .prevImg:hover img,
+.lightBoxImageView .nextImg:hover img {
   opacity: 1;
+  transform: scale(1.1);
 }
 /* testimonials */
 .testmonialStageWrap {
@@ -1210,7 +1257,7 @@ address b {
 
 .contactUs form .formFields {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   justify-content: space-between;
   gap: 1rem;
   /* border: 1px solid purple; */
