@@ -6,82 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artevia</title>
     <link rel="shortcut icon" href="./Assets/images/circle.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./Assets/css/color-scheme.css" />
     <link rel="stylesheet" href="./Assets/css/fonts.css" />
-    <link rel="stylesheet" href="./Assets/css/responsive/mobile.css" media="(max-width: 1024px)" />
-    <link rel="stylesheet" href="./Assets/css/responsive/desktop.css" media="(min-width: 1025px)" />
+    <link rel="stylesheet" href="./Assets/css/responsive/mobile.css" media="(max-width: 1023px)" />
+    <link rel="stylesheet" href="./Assets/css/responsive/desktop.css" media="(min-width: 1024px)" />
     <link rel="stylesheet" href="./Assets/css/style.css" />
     <link rel="stylesheet" href="./Assets/css/responsive/color-sceme.css" />
 </head>
 
-<body>
+<body class="theme1">
     <!-- Preloader -->
-    <div class="preloader active">
-        <div class="loadingInfo">
-            <div class="loadAnimation">
-                <span class="loaingText">Loading</span>
-                <div class="dots">
-                    <span class="dot dot1" style="--i: 0"></span>
-                    <span class="dot dot2" style="--i: 1"></span>
-                    <span class="dot dot3" style="--i: 2"></span>
-                </div>
-            </div>
-            <div class="loadingContent mt-16">
-                <ul class="loadingContentInfo">
-                </ul>
+    <div class="preloader active" aria-hidden="true">
+        <div class="plDecorElem"></div>
+        <div class="plCircle">
+            <div class="plCounter">
+                <span class="plCounterVal">0</span>
+                <span class="plCounterValSymb">%</span>
             </div>
         </div>
     </div>
-
-    <!-- Artevia Navigation Header -->
+    <!-- Artevia Template Header -->
     <div class="templateHeader"></div>
-    <!-- Menu Toggler -->
-    <div class="menuToggleWrap">
-        <button class="menuToggler invisible" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation" title="Menu">
-            <span class="line1" aria-hidden="true"></span>
-            <span class="line2" aria-hidden="true"></span>
-            <span class="line3" aria-hidden="true"></span>
-        </button>
-    </div>
 
-
-
-    <main>
-        <section class="aboutHero">
-            <header class="titleWrap t-center">
-                <h2>Designing Spaces That Reflect You</h2>
-                <p class="titleCaption mt-24">
-                    At Artevia, we believe every space tells a story—our mission is to shape that story with elegance, purpose, and timeless design.
-                </p>
-                <div class="ctaActionControllers mt-24">
-                    <a href="#contact" class="primaryctaBtn" type="a" aria-haspopup="dialog">
-                            Start Your Project
-                        </a>
-
-                    <a class="secondaryctaBtn" href="#portfolio">
-                            Explore Our Work
-                        </a>
+        <main>
+            <section class="breadcrumb">
+                <div class="breadcrumbBgImage">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="./Assets/images/banner-large.webp">
+                        <img src="./Assets/images/about/aboutBg.jpg" width="100%" aspect-ratio="16 / 9">
+                    </picture>
                 </div>
-            </header>
+                <header class="titleWrap t-center pagebanner">
+                    <h2>Designing Spaces That Reflect You</h2>
+                    <p class="titleCaption mt-16">
+                        At Artevia, we believe every space tells a story—our mission is to shape that story with elegance, purpose, and timeless design.
+                    </p>
+                    <div class="ctaActionControllers mt-24">
+                        <a href="#contact" class="primaryctaBtn primaryctaBtn-reverse" type="a" aria-haspopup="dialog">
+                                Start Your Project
+                            </a>
+
+                        <a class="secondaryctaBtn secondaryctaBtn-reverse" href="#aboutBlog">
+                                Explore About Us
+                            </a>
+                    </div>
+                </header>
         </section>
-        <!-- about -->
-        <section class="aboutBlog themeBg-white">
+
+        
+        
+        <section class="aboutBlog themeBg-white" id="aboutBlog">
             <div class="aboutBlogCol aboutBlogCol1">
                 <header class="titleWrap">
                     <h2>About Artevia</h2>
-                    <p class="titleCaption mt-24">
+                    <p class="mt-24">
                         At Artevia, we create interiors that go beyond aesthetics—they are thoughtfully designed environments that enhance how you live, work, and experience your space. Our approach blends creativity with functionality, ensuring that every design is not only
                         visually striking but also practical and enduring. From residential homes to commercial spaces, we craft interiors that reflect individuality, purpose, and refined taste.
                     </p>
-                    <p class="titleCaption mt-16">
+                    <p class="mt-16">
                         We take a collaborative approach, listening closely to your vision and translating it into thoughtfully curated spaces that balance aesthetics with practicality. By combining high-quality materials, smart planning, and refined craftsmanship, we create
                         environments that are not only visually striking but also deeply livable.
                     </p>
                 </header>
+                
+                <div class="aboutMetrics mt-24">
+                    <div class="metricCounter mc1">
+                        <div class="counterData"><span data-count="120" class="counterVal">120</span> <span class="counterText">+</span></div> 
+                        <h3>
+                            Projects
+                        </h3>
+                    </div>
+                    
+                    <div class="metricCounter mc2">
+                        <div class="counterData"><span data-count="45" class="counterVal">45</span> <span class="counterText">+</span></div> 
+                        <h3>
+                            Designers
+                        </h3>
+                    </div>
+                    
+                    <div class="metricCounter mc3">
+                        <div class="counterData"><span data-count="25" class="counterVal">25</span> <span class="counterText">+</span></div> 
+                        <h3>
+                            Cities
+                        </h3>
+                    </div>
+                    
+                    <div class="metricCounter mc3">
+                        <div class="counterData"><span data-count="98" class="counterVal">98</span> <span class="counterText">%</span></div> 
+                        <h3>
+                            Satisfaction
+                        </h3>
+                    </div>
+                </div>
             </div>
-            <div class="aboutBlogCol aboutBlogCol2"></div>
-
+            <div class="aboutBlogCol aboutBlogCol2">
+                <picture>
+                    <source media="(max-width: 1024px)" srcset="./Assets/images/banner.webp" fetchpriority="high">
+                    <img src="./Assets/images/banner-large1.webp" width="100%" aspect-ratio="16 / 9" alt="Interior design hero banner" fetchpriority="high">
+                </picture>
+            </div>
         </section>
-        <!-- Design PHILOSOPHY -->
+        
         <section class="philosophy">
             <header class="titleWrap t-center">
                 <h2>Our Design Philosphy</h2>
@@ -126,8 +151,8 @@
                     </div>
                     <div class="phiCardContent">
                         <h3 class="titleCaption">
-                                            Material Integrity
-                                        </h3>
+                            Material Integrity
+                        </h3>
                         <p class="mt-16">
                             Using quality materials that elevate experience
                         </p>
@@ -157,11 +182,11 @@
 
 
         </section>
-        <!-- Our Process -->
+        
         <section class="process themeBg-white">
             <header class="titleWrap">
                 <h2>Our Process</h2>
-                <p class="titleCaption">
+                <p class="titleCaption l-align">
                     We believe that great design is a balance between beauty and purpose. Every project begins with understanding the client’s vision, lifestyle, and aspirations.
                 </p>
             </header>
@@ -170,9 +195,9 @@
                     <div class="prsCardIcon">
                         <img src="./Assets/images/about/handshake-regular-full.svg" alt="icon" width="60px" />
                     </div>
-                    <h2 class="titleCaption">
+                    <h3 class="titleCaption">
                                 Consultation
-                            </h2>
+                            </h3>
                     <div class="processCardContent mt-16">
                         <p>
                             We begin by understanding your vision, space, and requirements.
@@ -184,9 +209,9 @@
                     <div class="prsCardIcon">
                         <img src="./Assets/images/about/lightbulb-regular-full.svg" alt="icon" width="60px" />
                     </div>
-                    <h2 class="titleCaption">
+                    <h3 class="titleCaption">
                                 Concept Development
-                            </h2>
+                            </h3>
                     <div class="processCardContent mt-16">
                         <p>
                             We translate ideas into mood boards, layouts, and design directions.
@@ -198,9 +223,9 @@
                     <div class="prsCardIcon">
                         <img src="./Assets/images/about/bezier-curve-solid-full.svg" alt="icon" width="60px" />
                     </div>
-                    <h2 class="titleCaption">
+                    <h3 class="titleCaption">
                                 Design Execution
-                            </h2>
+                            </h3>
                     <div class="processCardContent mt-16">
                         <p>
                             Every detail is refined—from materials to finishes.
@@ -212,9 +237,9 @@
                     <div class="prsCardIcon">
                         <img src="./Assets/images/about/flag-checkered-solid-full.svg" alt="icon" width="60px" />
                     </div>
-                    <h2 class="titleCaption">
+                    <h3 class="titleCaption">
                                 Delivery
-                            </h2>
+                            </h3>
                     <div class="processCardContent mt-16">
                         <p>
 
@@ -223,7 +248,7 @@
                     </div>
                 </div>
         </section>
-
+        
         <section class="achivements">
             <header class="titleWrap t-center">
                 <h2>Our Statistics</h2>
@@ -270,8 +295,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- Team -->
+        
         <section class="team themeBg-white">
             <header class="titleWrap">
                 <h2>Meet Our Designers</h2>
@@ -284,10 +308,10 @@
                 <div class="designers cardsSmall mt-24">
                     <div class="designerProfile">
                         <div class="dfImage">
-                            <img src="./Assets/images/about/team/team1.webp" alt="team profile image" width="210px" />
+                            <img src="./Assets/images/team/team1.webp" alt="team profile image" width="210px" />
                         </div>
                         <div class="dName">
-                            <h2 class="titleCaption">Priya Nair</h2>
+                            <h3 class="titleCaption">Priya Nair</h3>
                         </div>
                         <div class="dRole">
                             <p>
@@ -295,7 +319,7 @@
                             </p>
                         </div>
                         <div class="dSocial">
-                            <a href="#" class="socialIcon">
+                            <!-- <a href="#" class="socialIcon">
                                 <img src="./Assets/images/footer/facebook.svg" alt="facebook icon" width="24px">
                             </a>
                             <a href="#" class="socialIcon">
@@ -306,16 +330,16 @@
                             </a>
                             <a href="#" class="socialIcon">
                                 <img src="./Assets/images/footer/twitter-x.svg" alt="twitter-x icon" width="24px">
-                            </a>
+                            </a> -->
                         </div>
                     </div>
 
                     <div class="designerProfile">
                         <div class="dfImage">
-                            <img src="./Assets/images/about/team/team2.webp" alt="team profile image" width="210px" />
+                            <img src="./Assets/images/team/team2.webp" alt="team profile image" width="210px" />
                         </div>
                         <div class="dName">
-                            <h2 class="titleCaption">Amit Roy</h2>
+                            <h3 class="titleCaption">Amit Roy</h3>
                         </div>
                         <div class="dRole">
                             <p>
@@ -340,10 +364,10 @@
 
                     <div class="designerProfile">
                         <div class="dfImage">
-                            <img src="./Assets/images/about/team/team3.webp" alt="team profile image" width="210px" />
+                            <img src="./Assets/images/team/team3.webp" alt="team profile image" width="210px" />
                         </div>
                         <div class="dName">
-                            <h2 class="titleCaption">Tina Mehra</h2>
+                            <h3 class="titleCaption">Tina Mehra</h3>
                         </div>
                         <div class="dRole">
                             <p>
@@ -366,12 +390,40 @@
                         </div>
                     </div>
 
-                    <div class="designerProfile">
+                             <div class="designerProfile">
                         <div class="dfImage">
-                            <img src="./Assets/images/about/team/team4.webp" alt="team profile image" width="210px" />
+                            <img src="./Assets/images/team/team5.webp" alt="team profile image" width="210px" />
                         </div>
                         <div class="dName">
-                            <h2 class="titleCaption">Vikaram Patel</h2>
+                            <h3 class="titleCaption">Manon</h3>
+                        </div>
+                        <div class="dRole">
+                            <p>
+                                Lead Designer
+                            </p>
+                        </div>
+                        <div class="dSocial">
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/facebook.svg" alt="facebook icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/whatsapp.svg" alt="whatsapp icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/linkedin.svg" alt="linkedin icon" width="24px">
+                            </a>
+                            <a href="#" class="socialIcon">
+                                <img src="./Assets/images/footer/twitter-x.svg" alt="twitter-x icon" width="24px">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="designerProfile">
+                        <div class="dfImage">
+                            <img src="./Assets/images/team/team4.webp" alt="team profile image" width="210px" />
+                        </div>
+                        <div class="dName">
+                            <h3 class="titleCaption">Vikaram Patel</h3>
                         </div>
                         <div class="dRole">
                             <p>
@@ -396,8 +448,24 @@
                 </div>
             </div>
         </section>
+        
+        <section class="bottomCTA about">
+            <header class="titleWrap t-center">
+                <h2>Let’s Create Something Exceptional </h2>
+                <p class="titleCaption mt-24">
+                    Whether you’re starting fresh or transforming an existing space, Artevia is here to guide you every step of the way.
+                    <header class="learMoreCTA ctaActionControllers mt-24">
 
-        <!-- Team -->
+                <div class="learMoreCTA ctaActionControllers mt-16">
+                    <a class="secondaryctaBtn LrnMore" href="./#contact">
+                        Start Your Project <span></span>
+                    </a>
+                </div>
+            </header>
+                </p>
+            </header>
+        </section>
+        
         <section class="whyChooseUs themeBg-white t-center">
             <header class="titleWrap">
                 <h2>Why Choose Artevia</h2>
@@ -512,30 +580,22 @@
             </header>
         </section>
 
-        <!-- about CTA -->
-        <section class="bottomCTA about">
-            <header class="titleWrap t-center">
-                <h2>Let’s Create Something Exceptional </h2>
-                <p class="titleCaption mt-24">
-                    Whether you’re starting fresh or transforming an existing space, Artevia is here to guide you every step of the way.
-                    <header class="learMoreCTA ctaActionControllers mt-24">
-                        <button class="primaryctaBtn LrnMore mt-16" type="submit">
-                            Start Your Project <span></span>
-                        </button>
-                    </header>
-                </p>
-            </header>
-        </section>
 
-    </main>
+        </main>
+        <!-- Footer -->
+        <div class="templateFooter"></div>
+
+       
 
 
-    <!-- Footer -->
-    <div class="templateFooter"></div>
+
+
+
 
     <!-- scripts -->
-    <script src="./Assets/js/preloader.js"></script>
-    <script src="./Assets/js/main.js"></script>
+    <script src="./Assets/js/components.js"></script>
+    <script src="./Assets/js/color-scheme.js"></script> 
+
 </body>
 
 </html>

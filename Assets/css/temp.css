@@ -1,0 +1,43 @@
+
+  --theme-700: #c55409;
+  --theme-800: #9c4210;
+  --theme-900: #7e3810;
+  --theme-950: #441b06;
+
+
+
+    :root{
+  --brown-50: #fff9ed; 
+  /* --brown-100: #fff2d4; */
+  /* --brown-100: #ffe0af; */
+  --theme-100: #ede0d4;
+  --theme-200: #f0ede8;
+  --theme-300: #ffd289;
+  --theme-400: #fea739;
+  --theme-500: #fc8b13;
+  --theme-600: #ed7009;
+  }
+
+
+  /* :root{
+--theme-100: #ede0d4;
+--theme-200: #e6ccb2;
+--theme-300: #ddb892;
+--theme-400: #b08968;
+--theme-500: #7f5539;
+--theme-600: #9c6644;
+} */
+/* Summer Ocean Breeze: ["#e63946","#f1faee","#a8dadc","#457b9d","#1d3557"] */
+/* Ocean Blue Serenity: ["#03045e","#023e8a","#0077b6","#0096c7","#00b4d8","#48cae4","#90e0ef","#ade8f4","#caf0f8"] */
+/* Muted Earthy Tones: ["#ffcdb2","#ffb4a2","#e5989b","#b5838d","#6d6875"] */
+/* :root{
+  --theme-100: #caf0f8;
+  --theme-200: #ade8f4;
+  --theme-300: #90e0ef;
+  --theme-400: #48cae4;
+  --theme-500: #00b4d8;
+  --theme-600: #0096c7;
+  --theme-700: #0077b6;
+  --theme-800: #023e8a;
+  --theme-900: #03045e;
+} */

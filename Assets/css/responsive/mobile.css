@@ -1,4 +1,4 @@
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .header {
     position: relative;
     padding: 1rem 1.5rem;
@@ -13,6 +13,9 @@
     padding-top: 4rem;
     opacity: 0;
     transition: 0.6s ease-in-out;
+  }
+  main section:first-child{
+    padding-top: 90px !important;
   }
   section.fadeInUp{
     padding: 1.5rem;
@@ -38,7 +41,7 @@
     display: block;
     width: 100%;
     height: 2.1px;
-    background: var(--brown-950);
+    background: var(--text-muted);
     transition: 0.3s;
   }
   .header .hamburger span.line1 {
@@ -68,12 +71,12 @@
     left: 0;
     top: 0;
     padding: 24px 1.5rem 42px 24px;
-    background: var(--brown-50);
+    background: var(--theme-50);
     margin-top: -120%;
     transition: 0.6s ease-in-out;
     opacity: 0.3;
     z-index: -1;
-    border-bottom: 1px solid var(--brown-950);
+    border-bottom: 1px solid var(--theme-500);
   }
   .navGroup.active {
     margin-top: 72px;
@@ -95,17 +98,8 @@
     display: flex;
     flex-direction: column-reverse;
   }
-  .decoLights {
-    display: grid;
-  }
-  .decoLight {
-    width: 50% !important;
-    height: 50% !important;
-  }
-
-  .decoLight2,
-  .decoLight3 {
-    display: none;
+  .banner .plDecorElem{
+    background: url("../images/bg-elem2.svg") center / cover no-repeat;
   }
   .bannerContentWrap {
     grid-row: 2 / 3;
@@ -115,6 +109,8 @@
   }
   .banner .bannerImage {
     width: 100%;
+    border-radius: 0.3rem;
+    box-shadow: var(--shadow-s);
     overflow: hidden;
   }
   .bannerImage img {
@@ -132,25 +128,29 @@
     z-index: 1;
   }
   .aboutImageWrap {
-    padding: 5.1rem 0.6rem !important;
+    /* padding: 5.1rem 0.6rem !important; */
   }
   .aboutCounters {
     position: relative;
     width: 100%;
-    grid-template-columns: repeat(1, minmax(150px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
     margin-block: 24px;
   }
   .aboutCounters .aboutCounter {
     align-content: center !important;
     background: rgba(255, 250, 237, 0.604);
-    border: 3px solid var(--brown-50);
+    border: 3px solid var(--bg-light);
   }
+    
+.breadcrumbBgImage{
+  width: 150vw !important;
+}
 
   /* services */
   .servicesGrid {
     grid-template-columns: repeat(
       auto-fit,
-      minmax(clamp(300px, 30vw, 500px), 1fr)
+      minmax(clamp(330x, 30vw, 18rem), 1fr)
     ) !important;
   }
 
@@ -160,10 +160,79 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
     gap: 1rem;
   }
+  .aboutBlog{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  }
+  .aboutBlog .aboutBlogCol1{
+    padding-top: 2.1rem;
+    padding: 1rem;
+
+  }
+  .whyChooseSideImg{
+    display: none;
+  }
+  
+  .ourServicesGrid{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  }
+  
+.bannerImage {
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  /* margin-bottom: 24px; */
+}
+
+.testimonialRow{
+  display: grid;
+  grid-template-columns: 1fr !important;
+}
+.testmonialStageWrap{
+  display: block !important;
+}
+.testimonialImageWrap{
+  display: none;
+}
+
+.aboutBlog {
+  display: grid;
+  grid-template-columns: 1fr !important;
+}
+.aboutBlogCol picture{
+  min-width: 100% !important;
+  height: auto !important;
+}
+.aboutBlogCol2{
+  grid-area: 1 / 1;
+}
+.arteviaPageRow{
+  display: block !important;
+}
+.abSearchBox{
+  display: none
+}
+
+.arteviaRelatedArticles{
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.arteviaBlogCTA{
+  display: none;
+}
 }
 @media screen and (max-width: 600px) {
   .aboutFluidContent {
     display: none;
+  }
+  .metricCounter{
+    min-width: 100% !important;
+    height: 120px !important;
+  }
+  .heroMetrics, .aboutCounters {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .aboutCounter{
+    min-width: 100%;
   }
   .banner .ctaActionControllers{
     display: grid !important;
@@ -182,18 +251,28 @@
   .testimonialCard {
     display: block !important;
   }
+  .smallTestCard {
+    margin-top: 1rem;
+  }
   .testCardImg {
     height: 300px !important;
     /* max-height: 300px; */
   }
   .testimonialCardPrev,
   .testimonialCardNext {
-    display: none !important;
+    /* display: none !important; */
   }
-  .testCardContent .contentProfile {
+  .testCardContent .contentProfile,
+  .designersGrid {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+.designersGrid .titleCaption{
+  min-width: 100%;
+}
+.testimonialCardsStage{
+  /* max-width: 300px; */
+}
     /* portfolio */
   
 .lightBoxViewGrid {
@@ -213,9 +292,55 @@
     min-width: 300px;
     padding: 0px 1rem !important;
   }
-
+  .designersGrid {
+  grid-template-columns: 1fr !important;
+}
   /* blog */
   .blogLayout {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
   }
+  .breadcrumb .ctaActionControllers{
+    display: grid !important;
+    gap: 1rem;
+  }
+  .servicesHero::after{
+  background: linear-gradient(90deg, 
+  var(--theme-50),
+  rgba(255, 255, 255, 0.81) 100%
+  ) !important;
+}
+
+.arteviaBlogInfo{
+  display: block !important;
+}
+.abiSocialMedia
+{
+  padding-left: 0px !important;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--theme-200);
+  border-left: none !important;
+  justify-content: center;
+}
+.arteviaBlogBottomCTA{
+    background: linear-gradient(90deg, var(--theme-50), var(--theme-100), var(--theme-300)) !important;
+}
+.arteviaBlogBottomCTA {
+  display: block !important;
+  position: relative;
+}
+.arteviaBlogBottomCTA::before {
+  margin-top: 60px;
+}
+.abbCTAColActionButton {
+  margin-top: 24px;
+  justify-content: start !important;
+  padding-left: 0px !important;
+}
+.arteviaPageBannerUpdateInfo{
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.arteviaPageBannerUpdateInfo .leftdot{
+  display: none;
+}
 }

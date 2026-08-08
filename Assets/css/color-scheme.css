@@ -1,0 +1,62 @@
+/* Autumn Harvest: ["#ede0d4","#e6ccb2","#ddb892","#b08968","#7f5539","#9c6644"] */
+/* Deep Sea: ["#0d1b2a","#1b263b","#415a77","#778da9","#e0e1dd"] */
+:root{
+  /* solid colors */
+
+}
+
+@media (prefers-color-scheme: light){
+   :root{
+  --bg-dark: hsl(0, 0%, 95%);
+  --bg: hsl(0 0% 100%);
+  --bg-light: hsl(0 0% 90%);
+  --text: hsl(0 0% 5%);
+  --text-muted: hsl(0 0% 30%);
+
+  --theme-extra-light: #fbf7f4;
+  --theme-50: #f8f3ee;
+  --theme-100: #ede0d4;
+  --theme-200: #e6ccb2;
+  --theme-300: #7f5539;
+  --theme-400: #b08968;
+  --theme-500: #7f5539;
+  --theme-600: #9c6644;
+  }
+
+  .header{
+    /* box-shadow: var(--shadow-s); */
+  }
+  .header::before,
+  .header.fixed::after{
+    box-shadow: var(--shadow-s);
+  }
+  .navLinksWrap .navCTA a {
+    background: var(--theme-500);
+    color: #fff;
+    box-shadow: var(--shadow-m);
+  } 
+  .header li a.active {
+    color: var(--theme-500);
+  }
+  .bannerContent li svg {
+    fill: var(--theme-500);
+  }
+  .logo h1{
+    color: var(--theme-500);
+  }
+  .aboutCounter{
+    background: var(--theme-50) !important;
+    /* border: 1px solid var(--bg); */
+    box-shadow: none !important;
+  }
+  .ThemeBg-Light{
+    background: #fff;
+  }
+  .decorLamps svg {
+    opacity: 0.42;
+  }
+
+.bottomCTA h2, .bottomCTA p {
+  color: var(--text) !important;
+}
+}
