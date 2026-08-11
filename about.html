@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./Assets/css/responsive/color-sceme.css" />
 </head>
 
-<body class="theme1">
+<body>
     <!-- Preloader -->
     <div class="preloader active" aria-hidden="true">
         <div class="plDecorElem"></div>
@@ -42,11 +42,11 @@
                         At Artevia, we believe every space tells a story—our mission is to shape that story with elegance, purpose, and timeless design.
                     </p>
                     <div class="ctaActionControllers mt-24">
-                        <a href="#contact" class="primaryctaBtn primaryctaBtn-reverse" type="a" aria-haspopup="dialog">
+                        <a href="#contact" class="primaryctaBtn" type="a" aria-haspopup="dialog">
                                 Start Your Project
                             </a>
 
-                        <a class="secondaryctaBtn secondaryctaBtn-reverse" href="#aboutBlog">
+                        <a class="secondaryctaBtn" href="#aboutBlog">
                                 Explore About Us
                             </a>
                     </div>
@@ -55,7 +55,7 @@
 
         
         
-        <section class="aboutBlog themeBg-white" id="aboutBlog">
+        <section class="aboutBlog" id="aboutBlog">
             <div class="aboutBlogCol aboutBlogCol1">
                 <header class="titleWrap">
                     <h2>About Artevia</h2>
@@ -70,6 +70,12 @@
                 </header>
                 
                 <div class="aboutMetrics mt-24">
+                    <svg viewBox="0 0 1000px 500px" xmlns="http://www.w3.org/2000/svg">
+                        <filter id="noise1" x="0" y="0" width="100%" height="100%">
+                            <feTurbulence baseFrequency="0.012" stitchTiles="stitch" />
+                        </filter>
+                        <rect x="0" y="0" width="1000" height="500" fill="purple" filter="url(#noise1)" />
+                    </svg>
                     <div class="metricCounter mc1">
                         <div class="counterData"><span data-count="120" class="counterVal">120</span> <span class="counterText">+</span></div> 
                         <h3>

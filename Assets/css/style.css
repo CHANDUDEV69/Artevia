@@ -346,7 +346,6 @@ p {
 } */
 .ThemeBg-Light{
   background: var(--bg-light);
-
 }
 .paraMargin{
   display: block  ;
@@ -442,15 +441,23 @@ p {
   height: auto;
   gap: 1rem;
   background: transparent;
-  border: 1px solid var(--bg-light);
   border-radius: 0.3rem;
   overflow: hidden;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px ,1fr));
   justify-content: space-evenly;
+  border: 1px solid var(--bg-light);
   box-shadow: var(--shadow-s);
   z-index: 10;
+}
+.heroMetrics svg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.21;
 }
 .metricCounter{
   position: relative;
@@ -461,7 +468,6 @@ p {
   justify-items: center;
   align-content: center;
   margin-inline: auto;
-  background: var(--bg-light);
   box-shadow: var(--shadow-m);
   overflow: hidden;
 }
@@ -752,15 +758,14 @@ body:has(#lightBoxDialog[open]) {
 .aboutRow::after {
   content: "";
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
   height: 100%;
   width: 100%;
   background: url("../images/blogs/decor.png");
-  background-position: bottom;
   background-repeat: no-repeat;
-  transform: rotateZ(21deg);
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   opacity: 0.012;
   z-index: -1;
 }
@@ -1601,6 +1606,7 @@ button[submit] {
   border-top: 1px solid rgba(126, 56, 16, 0.12);
   background: transparent;
   overflow: hidden;
+  padding-block: 1.2rem;
 }
 
 .arteviaFooter::before{
@@ -1718,6 +1724,7 @@ button[submit] {
   text-align: center;
   padding-block: 0.3rem;
   border-top: 1px dashed var(--theme-500);
+  color: var(--text-muted)
 }
 .footerLogoCaption {
   font-style: italic;
@@ -1733,19 +1740,15 @@ button[submit] {
   padding-block: 6rem !important;
   background: transparent;
 }
+.breadcrumb h2{
+  color: var(--text);
+}
 .breadcrumbBgImage{
   position: absolute;
   width: 100%;
   height: 100%;
   inset: 0;
   z-index: -1;
-}
-.breadcrumb::after {
-  background: radial-gradient(
-    transparent 20%,
-    rgba(255, 255, 255, 0.801),
-    var(--theme-50)
-  );
 }
 .servicesHero{
   position: relative;
@@ -1778,30 +1781,12 @@ button[submit] {
 .servicesHero .ctaActionControllers{
   width: 100% !important;
 }
-/* .servicesHero::after {
-  max-width: 420px;
-  background: linear-gradient(90deg, 
-  var(--theme-50),
-  rgba(255, 255, 255, 0.801),
-    transparent
-  );
-} */
 .aboutBlog {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   background: transparent;
-}
-.aboutBlog::before{
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: #fff;
-  z-index: -1;
 }
 .aboutBlog::after{
   position: absolute;
@@ -1813,7 +1798,7 @@ button[submit] {
   background: url("../images/about/texture.svg");
   background-size: cover;
   background-position: start;
-  opacity: 0.012;
+  opacity: 0.12;
   z-index: -1;
 }
 .aboutBlog .aboutBlogCol1{
@@ -1840,24 +1825,42 @@ button[submit] {
   content: "";
   inset: 0;
   left: 0;top: 0;
-  background: radial-gradient(circle at center, var(--theme-600), var(--theme-500));
-  opacity: 0.9;
+  background: radial-gradient(
+    var(--bg-light) 20%,
+    var(--bg-light)
+  );
+  opacity: 0.5;
 }
 .aboutMetrics{
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
-  background: var(--theme-50);;
+  background: transparent;
   border-radius: 1rem;
-  border: 1px solid #eeeeee;
+  box-shadow: var(--shadow-s);
+}
+.aboutMetrics svg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.21;
 }
 .aboutMetrics .metricCounter{
-  aspect-ratio: 1;
-  padding: 10px;
-  background: #fff;
-  border: 1px solid var(--theme-100);
+  position: relative;
+  width: 100%;
+  min-width: 90px;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  justify-items: center;
+  align-content: center;
+  margin-inline: auto;
+  box-shadow: var(--shadow-m);
+  overflow: hidden;
 }
 .cardsSmall {
   display: grid;
