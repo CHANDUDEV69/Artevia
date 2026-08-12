@@ -928,12 +928,12 @@ body:has(#lightBoxDialog[open]) {
 }
 .bottomCTA {
   position: relative;
-  background: transparent;
 }
 .bottomCTA {
   padding-block: 7.2rem !important;
 }
-.bottomCTA::before{
+.bottomCTA::before,
+.bottomCTA::after{
   content: "";
   position: absolute;
   width: 100%;
@@ -944,10 +944,14 @@ body:has(#lightBoxDialog[open]) {
   pointer-events: none;
   z-index: -1;
 }
-.bottomCTA::before {
-  background: url("../images/dots.png");
+.bottomCTA::before{
+  background: var(--bg-dark);
+}
+.bottomCTA::after {
+  background: url("../images/blogs/flower-vase-modern-interior.webp");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   opacity: 0.42;
 }
 .bottomCTA h2,
@@ -1795,9 +1799,8 @@ button[submit] {
   height: 100%;
   left: 0;
   top: 0;
-  background: url("../images/about/texture.svg");
+  /* background: url("../images/about/texture.svg"); */
   background-size: cover;
-  background-position: start;
   opacity: 0.12;
   z-index: -1;
 }
@@ -1829,7 +1832,22 @@ button[submit] {
     var(--bg-light) 20%,
     var(--bg-light)
   );
-  opacity: 0.5;
+  opacity: 0.9;
+}
+.bgCircles{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background-image: url("../images/blogs/circle1.svg");
+  background-attachment: fixed;
+  opacity: 0.06;
+}
+.bgCircles svg circle{
+  fill: var(--theme-300);
+  opacity: 0.3;
 }
 .aboutMetrics{
   position: relative;
@@ -1867,16 +1885,40 @@ button[submit] {
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 1rem;
 }
+.philosophyCards{
+  position: relative;
+  background: var(--text-muted);
+  padding: 1.2rem;
+  overflow: hidden;
+}
+.philosophyCard #glassEffect3{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.12;
+  z-index: -1;
+}
 .philosophyCards .philosophyCard,
 .processCards .processCard,
 .whyChCard {
-  background: #fff;
-  background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.89));
+  background: var(--text);
   padding: 1.2rem;
   border-radius: 0.3rem;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
+.philosophyCard h3{
+  color: var(--bg);
+}
+.philosophyCard p{
+  color: var(--bg-light);
+}
+.philosophyCard svg path{
+  fill: var(--theme-300);
+}
 .philosophyCards .philosophyCard {
+  border: 1px solid var(--text-muted);
   transition: 0.3s ease-in-out;
 }
 .philosophyCards .philosophyCard:hover {
@@ -1947,7 +1989,7 @@ button[submit] {
 }
 .achiveCounter {
   background: rgba(255, 255, 255, 0.534);
-  background: linear-gradient(to bottom, var(--theme-100), var(--theme-50));
+  background: linear-gradient(90deg, var(--text), var(--text-muted), var(--text-muted));
   padding: 1.5rem 1rem;
   border-radius: 0.3rem;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
@@ -1958,14 +2000,17 @@ button[submit] {
   font-size: clamp(42px, 4.2vw, 60px);
   color: var(--theme-500);
 }
+.achiveCounter h3 span{    color: var(--text);
+    font-weight: 100 !important;
+    position: absolute;
+    margin-top: -15px;
+}
 .achiveCounter .titleCaption {
-  color: var(--theme-500);
+  color: var(--bg-light);
   opacity: 0.72;
 }
 .designersGrid {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  justify-content: space-between;
+  display: flex;
   gap: 1.2rem;
 }
 .designersGrid .cardsSmall {
@@ -1974,25 +2019,51 @@ button[submit] {
   overflow: hidden;
 }
 .designersGrid > p {
-  min-width: 300px;
-  max-width: 480px;
+  min-width: 240px;
+  max-width: 240px;
 }
 .designers {
+  transform-style: preserve-3d;
+  perspective: 1000px;
   max-width: 100%;
-  /* border: 1px solid red; */
+  min-height: 420px;
+}
+.designerProfile:nth-child(1) {
+  z-index: 1;
+}
+
+.designerProfile:nth-child(2) {
+  z-index: 2;
+}
+
+.designerProfile:nth-child(3) {
+  z-index: 3;
+}
+.designerProfile:nth-child(4) {
+  z-index: 2;
+}
+.designerProfile:nth-child(5) {
+  z-index: 1;
+}
+
+
+.designerProfile:nth-child(4) {
+  z-index: 2;
 }
 .designerProfile {
-  min-width: 210px;
-  max-width:300px;
-  height: max-content;
+  position: absolute;
+  width: 210px;
   padding: 0.6rem 0.6rem 2.1rem;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-  background: var(--theme-50);
+  background: var(--text-muted);
   overflow: hidden;
+  margin-left: calc(var(--x) * 120px);
+  transform: translate3d(50%, 10%, 0) 
+    rotateZ(calc(var(--z) * 1deg));
 }
 .designerProfile .dfImage {
-  max-width: 420px;
-  max-height: 300px;
+  max-width: 300px;
+  max-height: 240px;
   border-radius: 0.3rem;
   overflow: hidden;
 }
@@ -2005,7 +2076,7 @@ button[submit] {
 }
 .dName .titleCaption{
   font-weight: 500;
-  color: var(--theme-500);
+  color: var(--text);
 }
 .dRole p{
   font-weight: 700;

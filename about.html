@@ -55,7 +55,9 @@
 
         
         
-        <section class="aboutBlog" id="aboutBlog">
+        <section class="aboutBlog ThemeBg-Light" id="aboutBlog">
+            <div class="bgCircles">
+            </div>
             <div class="aboutBlogCol aboutBlogCol1">
                 <header class="titleWrap">
                     <h2>About Artevia</h2>
@@ -72,7 +74,7 @@
                 <div class="aboutMetrics mt-24">
                     <svg viewBox="0 0 1000px 500px" xmlns="http://www.w3.org/2000/svg">
                         <filter id="noise1" x="0" y="0" width="100%" height="100%">
-                            <feTurbulence baseFrequency="0.012" stitchTiles="stitch" />
+                            <feTurbulence baseFrequency="0.005" stitchTiles="stitch" />
                         </filter>
                         <rect x="0" y="0" width="1000" height="500" fill="purple" filter="url(#noise1)" />
                     </svg>
@@ -113,83 +115,97 @@
             </div>
         </section>
         
-        <section class="philosophy">
-            <header class="titleWrap t-center">
-                <h2>Our Design Philosphy</h2>
-                <p class="titleCaption">
-                    We believe that great design is a balance between beauty and purpose. Every project begins with understanding the client’s vision, lifestyle, and aspirations.
-                </p>
-            </header>
-            <!-- Our philosophy is rooted in: -->
-            <div class="cardsSmall philosophyCards mt-24">
-
-                <div class="philosophyCard t-center">
-                    <div class="phiCardIcon">
-                        <img src="./Assets/images/about/fill-solid-full.svg" alt="icon" width="60px" />
-                    </div>
-                    <div class="phiCardContent">
-                        <h3 class="titleCaption">
+<section class="philosophy ThemeBg-Light">
+    <header class="titleWrap t-center">
+        <h2>Our Design Philosphy</h2>
+        <p class="titleCaption">
+            We believe that great design is a balance between beauty and purpose. Every project begins with understanding the client’s vision, lifestyle, and aspirations.
+        </p>
+    </header>
+    <!-- Our philosophy is rooted in: -->
+    <div class="cardsSmall philosophyCards mt-24">
+        <div class="philosophyCard t-center">
+            <svg viewBox="0 0 1000px 500px" xmlns="http://www.w3.org/2000/svg" id="glassEffect3">
+                <filter id="noise1" x="0" y="0" width="100%" height="100%">
+                    <feTurbulence baseFrequency="0.012" stitchTiles="stitch" />
+                </filter>
+                <rect x="0" y="0" width="1000" height="500" fill="purple" filter="url(#noise1)" />
+            </svg>
+            <div class="phiCardIcon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-droplet-fill" viewBox="0 0 16 16">
+                    <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6M6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13" />
+                </svg>
+            </div>
+            <div class="phiCardContent">
+                <h3 class="titleCaption">
                                             Timeless Design 
                                         </h3>
-                        <p class="mt-16">
-                            Creating spaces that remain elegant for years
-                        </p>
-                    </div>
-                </div>
+                <p class="mt-16">
+                    Creating spaces that remain elegant for years
+                </p>
+            </div>
+        </div>
 
-                <div class="philosophyCard t-center">
-                    <div class="phiCardIcon">
-                        <img src="./Assets/images/about/mattress-pillow-solid-full.svg" alt="icon" width="60px" />
-                    </div>
-                    <div class="phiCardContent">
-                        <h3 class="titleCaption">
+        <div class="philosophyCard t-center">
+            <div class="phiCardIcon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-bookshelf" viewBox="0 0 16 16">
+                    <path d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5M3 14h10v-3H3zm0-4h10V7H3zm0-4h10V3H3z" />
+                </svg>
+            </div>
+            <div class="phiCardContent">
+                <h3 class="titleCaption">
                                             Functional Living
                                         </h3>
-                        <p class="mt-16">
-                            Designing for comfort and usability
-                        </p>
-                    </div>
-                </div>
+                <p class="mt-16">
+                    Designing for comfort and usability
+                </p>
+            </div>
+        </div>
 
-                <div class="philosophyCard t-center">
-                    <div class="phiCardIcon">
-                        <img src="./Assets/images/about/ranking-star-solid-full.svg" alt="icon" width="60px" />
-                    </div>
-                    <div class="phiCardContent">
-                        <h3 class="titleCaption">
+        <div class="philosophyCard t-center">
+            <div class="phiCardIcon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
+                    <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"
+                    />
+                </svg>
+            </div>
+            <div class="phiCardContent">
+                <h3 class="titleCaption">
                             Material Integrity
                         </h3>
-                        <p class="mt-16">
-                            Using quality materials that elevate experience
-                        </p>
-                    </div>
-                </div>
+                <p class="mt-16">
+                    Using quality materials that elevate experience
+                </p>
+            </div>
+        </div>
 
-                <div class="philosophyCard t-center">
-                    <div class="phiCardIcon">
-                        <img src="./Assets/images/about/ruler-horizontal-solid-full.svg" alt="icon" width="60px" />
-                    </div>
-                    <div class="phiCardContent">
-                        <h3 class="titleCaption">
+        <div class="philosophyCard t-center">
+            <div class="phiCardIcon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-brilliance" viewBox="0 0 16 16">
+                    <path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16M1 8a7 7 0 0 0 7 7 3.5 3.5 0 1 0 0-7 3.5 3.5 0 1 1 0-7 7 7 0 0 0-7 7" />
+                </svg>
+            </div>
+            <div class="phiCardContent">
+                <h3 class="titleCaption">
                                             Attention to Detail
                                         </h3>
-                        <p class="mt-16">
-                            Every element is intentional
-                        </p>
-                    </div>
-                </div>
+                <p class="mt-16">
+                    Every element is intentional
+                </p>
             </div>
-            <div class="philCardQuote t-center mt-24">
+        </div>
+    </div>
+    <div class="philCardQuote t-center mt-24">
 
-                <p>We don’t just design spaces—we curate experiences.</p>
-            </div>
+        <p>We don’t just design spaces—we curate experiences.</p>
+    </div>
 
-            </div>
+    </div>
 
 
-        </section>
+</section>
         
-        <section class="process themeBg-white">
+        <section class="process">
             <header class="titleWrap">
                 <h2>Our Process</h2>
                 <p class="titleCaption l-align">
@@ -255,7 +271,7 @@
                 </div>
         </section>
         
-        <section class="achivements">
+        <section class="achivements ThemeBg-Light">
             <header class="titleWrap t-center">
                 <h2>Our Statistics</h2>
                 <p class="titleCaption">
@@ -302,7 +318,7 @@
             </div>
         </section>
         
-        <section class="team themeBg-white">
+        <section class="team">
             <header class="titleWrap">
                 <h2>Meet Our Designers</h2>
             </header>
@@ -312,7 +328,7 @@
                     every client.
                 </p>
                 <div class="designers cardsSmall mt-24">
-                    <div class="designerProfile">
+                    <div class="designerProfile" style="--x: 0; --z: -45">
                         <div class="dfImage">
                             <img src="./Assets/images/team/team1.webp" alt="team profile image" width="210px" />
                         </div>
@@ -325,7 +341,7 @@
                             </p>
                         </div>
                         <div class="dSocial">
-                            <!-- <a href="#" class="socialIcon">
+                            <a href="#" class="socialIcon">
                                 <img src="./Assets/images/footer/facebook.svg" alt="facebook icon" width="24px">
                             </a>
                             <a href="#" class="socialIcon">
@@ -336,11 +352,11 @@
                             </a>
                             <a href="#" class="socialIcon">
                                 <img src="./Assets/images/footer/twitter-x.svg" alt="twitter-x icon" width="24px">
-                            </a> -->
+                            </a>
                         </div>
                     </div>
 
-                    <div class="designerProfile">
+                    <div class="designerProfile" style="--x: 1; --z: -30">
                         <div class="dfImage">
                             <img src="./Assets/images/team/team2.webp" alt="team profile image" width="210px" />
                         </div>
@@ -368,7 +384,7 @@
                         </div>
                     </div>
 
-                    <div class="designerProfile">
+                    <div class="designerProfile" style="--x: 2; --z: 0">
                         <div class="dfImage">
                             <img src="./Assets/images/team/team3.webp" alt="team profile image" width="210px" />
                         </div>
@@ -396,7 +412,7 @@
                         </div>
                     </div>
 
-                             <div class="designerProfile">
+                             <div class="designerProfile" style="--x: 3; --z: 30">
                         <div class="dfImage">
                             <img src="./Assets/images/team/team5.webp" alt="team profile image" width="210px" />
                         </div>
@@ -424,7 +440,7 @@
                         </div>
                     </div>
 
-                    <div class="designerProfile">
+                    <div class="designerProfile" style="--x: 4; --z: 45">
                         <div class="dfImage">
                             <img src="./Assets/images/team/team4.webp" alt="team profile image" width="210px" />
                         </div>
@@ -455,7 +471,7 @@
             </div>
         </section>
         
-        <section class="bottomCTA about">
+        <section class="bottomCTA about ThemeBg-Light">
             <header class="titleWrap t-center">
                 <h2>Let’s Create Something Exceptional </h2>
                 <p class="titleCaption mt-24">
@@ -478,7 +494,7 @@
                 <p class="titleCaption">
                     Thougtful design, seamless execution, and a client-first approach that brings timeless interiors to life.
                 </p>
-                <div class="whyChooseGrid  mt-24">
+                <div class="whyChooseGrid mt-24">
                     <div class="whyChContent cardsSmall">
                         <div class="whyChCard">
                             <div class="cardImg">

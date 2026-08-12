@@ -179,7 +179,6 @@
   }
   .team{
     position: relative;
-    background: #fff !important;
   }
   .team::before{
     position: absolute;
@@ -191,7 +190,7 @@
     background: url("../../images/team/pattern.svg");
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0.12;
+    opacity: 0.06;
     z-index: -1;
   }
   .designersGrid > p{

@@ -1,0 +1,44 @@
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="noise">
+                        <feTurbulence
+                            type="fractalNoise"
+                            baseFrequency="0.8"
+                            numOctaves="3"
+                            seed="10"
+                        />
+                        <feColorMatrix
+                            type="saturate"
+                            values="0"
+                        />
+                        <feComponentTransfer>
+                            <feFuncA type="table" tableValues="0 0.2" />
+                        </feComponentTransfer>
+                        </filter>
+
+                        <clipPath id="circleClip">
+                        <circle cx="250" cy="250" r="200" />
+                        </clipPath>
+                    </defs>
+
+                    <!-- Purple base -->
+                    <circle
+                        cx="0"
+                        cy="500"
+                        r="200"
+                        fill="#ddb892"
+                    />
+                    <circle cx="150" cy="290" r="30" 
+                        fill="#ddb892"/>
+
+                    <!-- Grain, restricted to the circle -->
+                    <rect
+                        x="150"
+                        y="150"
+                        width="200"
+                        height="200"
+                        filter="url(#noise)"
+                        clip-path="url(#circleClip)"
+                        opacity="0.5"
+                    />
+                    </svg>
