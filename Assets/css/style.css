@@ -1832,7 +1832,7 @@ button[submit] {
     var(--bg-light) 20%,
     var(--bg-light)
   );
-  opacity: 0.9;
+  opacity: 0.6;
 }
 .bgCircles{
   position: absolute;
@@ -2030,12 +2030,12 @@ button[submit] {
 }
 .designerProfile:nth-child(1) {
   z-index: 1;
+  transform: translate3d(50%, 0%, 0) 
+    rotateY(calc(0deg));
 }
-
 .designerProfile:nth-child(2) {
   z-index: 2;
 }
-
 .designerProfile:nth-child(3) {
   z-index: 3;
 }
@@ -2045,21 +2045,19 @@ button[submit] {
 .designerProfile:nth-child(5) {
   z-index: 1;
 }
-
-
-.designerProfile:nth-child(4) {
-  z-index: 2;
-}
 .designerProfile {
   position: absolute;
   width: 210px;
   padding: 0.6rem 0.6rem 2.1rem;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-  background: var(--text-muted);
+  /* background: var(--text-); */
+  background: transparent;
+  border: 1px solid var(--text-muted);
   overflow: hidden;
-  margin-left: calc(var(--x) * 120px);
-  transform: translate3d(50%, 10%, 0) 
-    rotateZ(calc(var(--z) * 1deg));
+  border-radius: 0.3rem;
+  margin-left: calc(var(--x) * 180px);
+  /* transform: translate3d(50%, 10%, 0) 
+    rotateZ(calc(var(--z) * 1deg)); */
 }
 .designerProfile .dfImage {
   max-width: 300px;

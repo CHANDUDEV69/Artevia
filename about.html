@@ -72,12 +72,14 @@
                 </header>
                 
                 <div class="aboutMetrics mt-24">
+                    <span aria-hidden="true">
                     <svg viewBox="0 0 1000px 500px" xmlns="http://www.w3.org/2000/svg">
                         <filter id="noise1" x="0" y="0" width="100%" height="100%">
                             <feTurbulence baseFrequency="0.005" stitchTiles="stitch" />
                         </filter>
                         <rect x="0" y="0" width="1000" height="500" fill="purple" filter="url(#noise1)" />
                     </svg>
+                    </span>
                     <div class="metricCounter mc1">
                         <div class="counterData"><span data-count="120" class="counterVal">120</span> <span class="counterText">+</span></div> 
                         <h3>
@@ -328,6 +330,7 @@
                     every client.
                 </p>
                 <div class="designers cardsSmall mt-24">
+                    <div class="bottomCirlce"></div>
                     <div class="designerProfile" style="--x: 0; --z: -45">
                         <div class="dfImage">
                             <img src="./Assets/images/team/team1.webp" alt="team profile image" width="210px" />
