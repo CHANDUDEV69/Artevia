@@ -23,12 +23,12 @@
 
                     <!-- Purple base -->
                     <circle
-                        cx="0"
-                        cy="500"
-                        r="200"
+                        cx="75"
+                        cy="200"
+                        r="100"
                         fill="#ddb892"
                     />
-                    <circle cx="150" cy="290" r="30" 
+                    <circle cx="150" cy="100" r="21" 
                         fill="#ddb892"/>
 
                     <!-- Grain, restricted to the circle -->

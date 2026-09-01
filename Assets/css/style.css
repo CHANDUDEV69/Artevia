@@ -430,7 +430,7 @@ p {
 .secondaryctaBtn{
   color: var(--text);
   background: transparent !important;
-  border: 1px solid var(--bg-light) !important;
+  border: 1px solid var(--text-muted) !important;
   box-shadow: var(--shadow-m);
   border-radius: 0.3rem;
   transition: 0.3s;
@@ -945,7 +945,8 @@ body:has(#lightBoxDialog[open]) {
   z-index: -1;
 }
 .bottomCTA::before{
-  background: var(--bg-dark);
+  background: var(--text-muted);
+  background: radial-gradient(var(--bg-light) 20%, var(--bg-light));
 }
 .bottomCTA::after {
   background: url("../images/blogs/flower-vase-modern-interior.webp");
@@ -1858,15 +1859,15 @@ button[submit] {
   padding: 1rem;
   background: transparent;
   border-radius: 1rem;
+  overflow: hidden;
   box-shadow: var(--shadow-s);
 }
 .aboutMetrics svg{
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   left: 0;
   top: 0;
-  opacity: 0.21;
+  opacity: 0.3;
 }
 .aboutMetrics .metricCounter{
   position: relative;
@@ -1887,7 +1888,7 @@ button[submit] {
 }
 .philosophyCards{
   position: relative;
-  background: var(--text-muted);
+  background: transparent;
   padding: 1.2rem;
   overflow: hidden;
 }
@@ -1902,23 +1903,55 @@ button[submit] {
 }
 .philosophyCards .philosophyCard,
 .processCards .processCard,
+.achiveCounter,
 .whyChCard {
-  background: var(--text);
+  position: relative;
+  background: transparent;
   padding: 1.2rem;
   border-radius: 0.3rem;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-m);
+  overflow: hidden;
+  transition: 0.12s ease-in-out;
 }
-.philosophyCard h3{
-  color: var(--bg);
+.processCards .processCard::before,
+.achiveCounter::before,
+.philosophyCards .philosophyCard::before,
+.whyChCard::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: var(--text);
+    opacity: 0.012;
+    z-index: -1;
+    transition: 0.3s;
 }
-.philosophyCard p{
-  color: var(--bg-light);
+.whyChCard::before{
+  opacity: 0.03;
 }
-.philosophyCard svg path{
+
+.processCards .processCard:hover::before,
+.achiveCounter:hover::before,
+.philosophyCards .philosophyCard:hover::before,
+.whyChCard:hover::before,
+.whyChCard:hover:before{
+  opacity: 0.06;
+}
+.philosophyCard h3,
+.whyChCard h3,
+.processCard h3{
+  color: var(--text);
+}
+.philosophyCard p,
+.whyChCard p{
+  color: var(--text-muted);
+}
+.philosophyCard svg path,
+.processCard svg path{
   fill: var(--theme-300);
 }
 .philosophyCards .philosophyCard {
-  border: 1px solid var(--text-muted);
   transition: 0.3s ease-in-out;
 }
 .philosophyCards .philosophyCard:hover {
@@ -1927,52 +1960,33 @@ button[submit] {
 .phiCardIcon img {
   opacity: 0.72;
 }
-.processCards .processCard {
-  position: relative;
-  background: linear-gradient(
-    60deg,
-    var(--theme-100),
-    var(--theme-50),
-    var(--theme-100));
-  transition: 0.12s ease-in-out;
-  overflow: hidden;
-}
-
-.processCards .processCard h3{
-  color: var(--theme-500);
-}
 .processCards .processCard:hover,
 .achiveCounter:hover {
-  /* scale: 1.012; */
   transform: translateY(-6px) scale(1.02);
 }
-.processCard::before,
-.processCard::after {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: 0;
+.processCard{
+  position: relative;
+  background: transparent;
 }
-
-.processCard::before {
-  margin-right: 1rem;
-  margin-top: 47px;
-  width: 100%;
-  height: 1px;
-  border-bottom: 3px dashed var(--theme-600);
-  opacity: 0.021;
-}
-.processCard::after {
+.processCard svg{
   width: 60px;
   height: 60px;
-  margin-right: 1rem;
-  margin-top: 18px;
-  background: var(--theme-300);
+}
+.processCard::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.06 !important;
+}
+.processCard::after {
+  position: absolute;
+  top: 0;
+  right: 0;
   text-align: center;
-  font-size: 3rem;
-  border-radius: 50%;
-  color: #fff;
-  opacity: 0.81;
+  font-size: 6rem;
+  color: var(--text-muted);
+  opacity: 0.06;
   z-index: 1;
 }
 .processCard1::after {
@@ -1987,143 +2001,212 @@ button[submit] {
 .processCard4::after {
   content: "4";
 }
-.achiveCounter {
-  background: rgba(255, 255, 255, 0.534);
-  background: linear-gradient(90deg, var(--text), var(--text-muted), var(--text-muted));
-  padding: 1.5rem 1rem;
-  border-radius: 0.3rem;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-  transition: 0.12s ease-in-out;
-}
 .achiveCounter h3 {
   font-size: 42px;
   font-size: clamp(42px, 4.2vw, 60px);
-  color: var(--theme-500);
+  color: var(--text);
 }
-.achiveCounter h3 span{    color: var(--text);
-    font-weight: 100 !important;
-    position: absolute;
-    margin-top: -15px;
+.achiveCounter h3 span{
+  color: var(--text-muted);
+  font-weight: 100 !important;
+  position: absolute;
+  margin-top: -15px;
 }
 .achiveCounter .titleCaption {
-  color: var(--bg-light);
+  color: var(--text-muted);
   opacity: 0.72;
 }
 .designersGrid {
   display: flex;
   gap: 1.2rem;
-}
-.designersGrid .cardsSmall {
-  width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   overflow: hidden;
 }
-.designersGrid > p {
-  min-width: 240px;
-  max-width: 240px;
+.dsgContent{
+  padding-right: 6vw;
 }
-.designers {
+.dsgProfiles{
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+}
+.dsgContent p{
+  max-width: 510px;
+}
+.designersInfoCards{
+  position: relative;
   transform-style: preserve-3d;
-  perspective: 1000px;
-  max-width: 100%;
-  min-height: 420px;
+  transform-origin: 1000px;
+  display: block;
+  width: max-content;
+  border-radius: 0.3rem;
+  overflow: hidden;
 }
-.designerProfile:nth-child(1) {
-  z-index: 1;
-  transform: translate3d(50%, 0%, 0) 
-    rotateY(calc(0deg));
-}
-.designerProfile:nth-child(2) {
-  z-index: 2;
-}
-.designerProfile:nth-child(3) {
-  z-index: 3;
-}
-.designerProfile:nth-child(4) {
-  z-index: 2;
-}
-.designerProfile:nth-child(5) {
-  z-index: 1;
-}
-.designerProfile {
+.designersInfoCards #designersInfoCardsBg{
   position: absolute;
-  width: 210px;
-  padding: 0.6rem 0.6rem 2.1rem;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-  /* background: var(--text-); */
-  background: transparent;
-  border: 1px solid var(--text-muted);
-  overflow: hidden;
-  border-radius: 0.3rem;
-  margin-left: calc(var(--x) * 180px);
-  /* transform: translate3d(50%, 10%, 0) 
-    rotateZ(calc(var(--z) * 1deg)); */
-}
-.designerProfile .dfImage {
-  max-width: 300px;
-  max-height: 240px;
-  border-radius: 0.3rem;
-  overflow: hidden;
-}
-.designerProfile .dfImage img {
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  opacity: 0.12;
+}
+.designersInfoCard{
+  position: relative;
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  height: 100%;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  transform: translate3d(-100%, 0%) rotate3d(90deg 0 0);
+  display: none;
+  transition: 0.6s ease-in-out;
+  box-shadow: var(--shadow-l);
+  /* border: 1px solid var(--text-muted); */
+}
+.designersInfoCard.active{
+  transform: translate(0%, 0%);
+  display: flex;
+  @starting-style{
+  transform: translate(0%, -120%);
+  }
+}
+
+.designersInfoCard.active .descSocialIcon svg path{
+  fill: var(--text-muted);
+}
+.designersInfoCard::before,
+.designersInfoCard::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0px;
+  opacity: 0.3;
+  background: linear-gradient(54deg, #0000 90%, var(--text-muted));
+  z-index: -1;
+}
+.designersInfoCard::after{
+  background: var(--text-muted);
+  opacity: 0.12;
+}
+.designersInfoCard .desc {
+  position: relative;
+  /* border: 1px solid var(--text-muted); */
+}
+.designersInfoCard .desc .descTitle{
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.designersList li{
+  margin-bottom: 0.6rem;
+}
+.designersList li a {
+  position: relative;
+  width: max-content;
+  color: var(--text-muted);
+  padding: 0.6rem 0;
+  display: flex;
+  transition: 0.6s ease-in-out;
+  text-transform: uppercase;
+  /* border-bottom: 1px solid var(--text-muted); */
+}
+.designersList li a::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  opacity: 0.3;
+  background: linear-gradient(to top, var(--text-muted), var(--text));
   transition: 0.3s ease-in-out;
 }
-.designerProfile:hover .dfImage img {
-  scale: 1.05;
+.designersList li a:hover::before{
+  height: 100%;
 }
-.dName .titleCaption{
-  font-weight: 500;
+.designersList li a.active::before{
+  height: 100%;
+}
+.designersList li a:hover{
   color: var(--text);
 }
-.dRole p{
-  font-weight: 700;
-}
-.dSocial {
-  position: absolute;
-  transform: translateY(42px);
+.descSocialIcons{
   display: flex;
-  gap: 0.6rem;
+  gap: 1rem;
+}
+.descSocialIcons .descSocialIcon{
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: 0.3s ease-in-out;
-  opacity: 0;
 }
-.designerProfile:hover .dSocial {
-  opacity: 1;
-  transform: translateY(3px);
+.descSocialIcon:hover{
+  scale: 1.2;
 }
-.dSocial .socialIcon img {
-  cursor: pointer;
-  width: 18px;
+.designersInfoCard .descImage{
+  position: relative;
+  width: 150px;
+  height: 210px;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-l);
+}
+.designersInfoCard .descImage img{
+  width: 100%;
+}
+.designersInfoCard .descImage.fetching {
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    var(--text-muted) 50%,
+    transparent 70%
+  );
+  background-size: 300% 300%;
+  animation: fetchingAnim 1.2s ease-in-out infinite;
+}
+
+@keyframes fetchingAnim {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
 }
 /* Why Choose Us */
 .whyChooseGrid {
   display: flex;
-  gap: 1.2rem;
+  gap: 3rem;
 }
 .whyChContent {
   width: 100%;
 }
-.whyChCard {
-  background: var(--theme-50);
-}
-.whyChCard h3 {
-  color: var(--theme-500);
-}
 .whyChooseSideImg {
   width: 21vw;
   min-width: clamp(300px, 30vw, 330px);
+  /* height: 420px; */
   border-radius: 0.3rem;
   overflow: hidden;
+  opacity: 0.9;
 }
 .whyChooseSideImg img {
   width: 100%;
   height: 100%;
   max-height: 510px;
 }
-/* .whyChCard .cardImg{
-     border: 1px solid red;
-} */
-.whyChCard .cardImg img {
+.whyChCard .cardImg svg path{
+  fill: var(--theme-300);
+}
+.whyChCard .cardImg svg {
+  width: 60px;
   opacity: 0.6;
 }
 

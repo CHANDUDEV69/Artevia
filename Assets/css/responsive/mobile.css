@@ -264,8 +264,8 @@
   }
   .testCardContent .contentProfile,
   .designersGrid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   }
 .designersGrid .titleCaption{
   min-width: 100%;
