@@ -1904,7 +1904,9 @@ button[submit] {
 .philosophyCards .philosophyCard,
 .processCards .processCard,
 .achiveCounter,
-.whyChCard {
+.whyChCard, 
+.servicesList .serviceCard
+{
   position: relative;
   background: transparent;
   padding: 1.2rem;
@@ -1916,7 +1918,9 @@ button[submit] {
 .processCards .processCard::before,
 .achiveCounter::before,
 .philosophyCards .philosophyCard::before,
-.whyChCard::before{
+.whyChCard::before, 
+.servicesList .serviceCard::before
+{
     content: "";
     position: absolute;
     width: 100%;
@@ -1927,8 +1931,9 @@ button[submit] {
     z-index: -1;
     transition: 0.3s;
 }
+.servicesList .serviceCard::before,
 .whyChCard::before{
-  opacity: 0.03;
+  opacity: 0.06;
 }
 
 .processCards .processCard:hover::before,
@@ -1940,11 +1945,14 @@ button[submit] {
 }
 .philosophyCard h3,
 .whyChCard h3,
-.processCard h3{
+.processCard h3,
+.serviceCard h3
+{
   color: var(--text);
 }
 .philosophyCard p,
-.whyChCard p{
+.whyChCard p,
+.serviceCard p{
   color: var(--text-muted);
 }
 .philosophyCard svg path,
@@ -2212,19 +2220,13 @@ button[submit] {
 
 
 /* Our Services */
-.ourServices{
-  /* border: 1px dashed red; */
-}
-.ourServices  * {
-  /* border: 1px dotted rgb(102, 255, 102); */
-}
 .ourServices .titleCaption{
   max-width: 720px;
 }
 .ourServicesGrid{
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 1.2rem;
+  gap: 3rem;
 }
 .ourServicesGrid .serviceLeftImg{
   max-height: 540px;
@@ -2240,13 +2242,9 @@ button[submit] {
   gap: 1rem;
 }
 
-.servicesList .serviceCard{
-  /* height: max-content; */
-  background: var(--theme-100);
-  padding: 1rem;
-  border-radius: 0.3rem;
-  border: 1px solid transparent;
-  transition: 0.21s ease;
+.servicesList .serviceCard svg path{
+  fill: var(--theme-300);
+  opacity: 0.9;
 }
 
 .ourServices.fadeInUp .servicesList{
@@ -2254,7 +2252,7 @@ button[submit] {
   opacity: 1;
 }
 .servicesList .serviceCard:hover{
-  border:1px solid var(--theme-200);
+  border:1px solid var(--text-muted);
   transform: translateY(-6px) scale(1.02);
 }
 .servicesList .serviceCard img{
