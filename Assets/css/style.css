@@ -1833,7 +1833,7 @@ button[submit] {
     var(--bg-light) 20%,
     var(--bg-light)
   );
-  opacity: 0.6;
+  opacity: 0.9;
 }
 .bgCircles{
   position: absolute;
@@ -1915,6 +1915,10 @@ button[submit] {
   overflow: hidden;
   transition: 0.12s ease-in-out;
 }
+.achiveCounter{
+  min-height: 210px;
+  align-content: center;
+}
 .processCards .processCard::before,
 .achiveCounter::before,
 .philosophyCards .philosophyCard::before,
@@ -1927,9 +1931,31 @@ button[submit] {
     height: 100%;
     inset: 0;
     background: var(--text);
-    opacity: 0.012;
+    opacity: 0.03;
     z-index: -1;
     transition: 0.3s;
+}
+.achiveCounter::after,
+.philosophyCards .philosophyCard::after,
+.whyChCard::after, 
+.servicesList .serviceCard::after{
+  content: "";
+  position: absolute;
+  inset: initial;
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, var(--text-muted), transparent);
+  transition: 0.21s ease-in-out;
+}
+.processCards .processCard:hover::after,
+.achiveCounter:hover::after,
+.philosophyCards .philosophyCard:hover::after,
+.whyChCard:hover::after, 
+.servicesList .serviceCard:hover::after{
+  opacity: 0.3;
 }
 .servicesList .serviceCard::before,
 .whyChCard::before{
@@ -2229,11 +2255,38 @@ button[submit] {
   gap: 3rem;
 }
 .ourServicesGrid .serviceLeftImg{
+  position: relative;
   max-height: 540px;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  background: transparent;
   overflow: hidden;
-  border-radius: 0.3rem;
+}
+.ourServicesGrid .serviceLeftImg::before,
+.ourServicesGrid .serviceLeftImg::after{
+  position: absolute;
+  content: "";
+  inset: 0;
+  left: 0;
+  top: 0;
+  background: var(--text-muted);
+  opacity: 0.3;
+  filter: blur(1.2px);
+  z-index: -1;
+}
+.ourServicesGrid .serviceLeftImg::after{
+  inset: initial;
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  background: linear-gradient(90deg, transparent, var(--text-muted), transparent);
 }
 .ourServices.fadeInUp .serviceLeftImg img{
+  max-height: 508px;
+  border-radius: 0.3rem;
+  box-shadow: var(--shadow-m);
   opacity: 1;
 }
 .servicesList{
@@ -2252,7 +2305,6 @@ button[submit] {
   opacity: 1;
 }
 .servicesList .serviceCard:hover{
-  border:1px solid var(--text-muted);
   transform: translateY(-6px) scale(1.02);
 }
 .servicesList .serviceCard img{
