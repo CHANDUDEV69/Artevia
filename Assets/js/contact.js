@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         })
         formField.addEventListener("blur", ()=>{
             if(formField.value.length > 0){
-                formField.previousElementSibling.classList.add("active")
+                formField.previousElementSibling.classList.add("active");
             }
             else{
-                formField.previousElementSibling.classList.remove("active")
+                formField.previousElementSibling.classList.remove("active");
             }
         })
     })

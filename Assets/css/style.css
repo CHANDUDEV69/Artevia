@@ -451,13 +451,29 @@ p {
   box-shadow: var(--shadow-s);
   z-index: 10;
 }
+.heroMetrics::before,
+.heroMetrics::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  left: 0;
+  background: linear-gradient(90deg, transparent, var(--text-muted), transparent);
+  opacity: 0.3;
+}
+.heroMetrics::before{
+  top: 0;
+}
+.heroMetrics::after{
+  bottom: 0;
+}
 .heroMetrics svg{
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  opacity: 0.21;
+  opacity: 0.03;
 }
 .metricCounter{
   position: relative;
@@ -470,6 +486,26 @@ p {
   margin-inline: auto;
   box-shadow: var(--shadow-m);
   overflow: hidden;
+}
+.metricCounter::before,
+.metricCounter::after{
+  position: absolute;
+  content: "";
+  inset: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(30deg, transparent, var(--text-muted), transparent);
+  opacity: 0.12;
+  z-index: -1;
+}
+.metricCounter::after{
+  inset: initial;
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, transparent, var(--text-muted), transparent);
+  opacity: 0.3;
 }
 .metricCounter .counterVal.bounceUp{
   animation: bounceUp 1.2s 1 ease-in-out;
@@ -526,9 +562,37 @@ p {
   outline: 1px solid transparent;
 }
 .ctaActionControllers .primaryctaBtn {
+  position: relative;
   color: #fff;
-  background: var(--gradient-dark);
-  /* border: 1px solid var(--theme-500); */
+  background: linear-gradient(45deg, var(--theme-500), var(--theme-400), var(--theme-500));
+}
+.ctaActionControllers .primaryctaBtn::before,
+.ctaActionControllers .primaryctaBtn::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(45deg, transparent, var(--text-muted), transparent);
+  opacity: 1;
+  /* filter: blur(1px); */
+  transition: 0.3s ease-in-out;
+}
+
+.ctaActionControllers .primaryctaBtn::before{
+  top: 0;
+  left: 0;
+}
+.ctaActionControllers .primaryctaBtn::after{
+  right: 0;
+  bottom: 0;
+}
+.ctaActionControllers .primaryctaBtn:hover::before{
+  width: 60%;
+  background: linear-gradient(45deg, var(--text-muted), transparent, transparent);
+}
+.ctaActionControllers .primaryctaBtn:hover::after{
+  width: 60%;
+  background: linear-gradient(45deg, transparent, transparent, var(--text-muted));
 }
 .primaryctaBtn-reverse{
   background: linear-gradient(45deg, var(--theme-50), #fff, var(--theme-50)) !important;
@@ -836,7 +900,7 @@ body:has(#lightBoxDialog[open]) {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1.2rem;
   overflow: hidden;
-  background: var(--theme-bg-dark);
+  background: transparent;
 }
 .aboutFixedContent{
   position: relative;
@@ -861,33 +925,40 @@ body:has(#lightBoxDialog[open]) {
   color: var(--template-black);
   overflow: hidden;
   cursor: default;
-  background: var(--theme-bg-extra-light-dark);
+  background: transparent;
   box-shadow: var(--shadow-m);
 }
 .aboutCounter svg{
+  position: relative;
   width: 42px;
   width: clamp(42px, 3vw, 3.9rem);
 }
 .aboutCounter svg path{
   fill: var(--text-muted);
 }
-.aboutCounters .aboutCounter::before {
+.aboutCounters .aboutCounter::before,
+.aboutCounters .aboutCounter::after {
   position: absolute;
   content: "";
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  aspect-ratio: 1;
-  /* margin-bottom: -120%; */
-  /* background: var(--gradient-light); */
-  /* background:  linear-gradient(180deg, transparent, var(--theme-50), var(--theme-100)); */
+  inset: 0;
   border-radius: 3px;
-  z-index: -1;
+  background: var(--text-muted);
+  opacity: 0.012;
   transition: 0.3s ease-in-out;
+  z-index: -1;
 }
-.aboutCounter.active::before {
+.aboutCounters .aboutCounter::after {
+  inset: initial;
+  width: 100%;
+  height: 1px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, transparent , var(--text-muted), transparent);
+  opacity: 0.9;
+}
+/* .aboutCounter.active::before {
   margin-bottom: 0px;
-}
+} */
 .aboutCounter .counterDesc {
   display: flex;
   justify-content: center;
@@ -898,6 +969,7 @@ body:has(#lightBoxDialog[open]) {
 }
 
 .aboutCounter .counterDesc h3{
+  position: relative;
   word-wrap: break-word;
 }
 .LrnMore {
@@ -1501,7 +1573,7 @@ body:has(#lightBoxDialog[open]) {
   border-radius: 6px;
 }
 .contactUs form .formFields .formField textarea {
-  border: 2px solid var(--theme-100) !important;
+  border: 1px solid var(--text-muted) !important;
   padding-inline: 10px;
   width: 300px;
 }
@@ -1521,7 +1593,7 @@ textarea::placeholder,
   font-family: var(--lato);
   font-size: 0.8rem;
   font-size: clamp(0.8rem, 1.5vw, 1.12rem);
-  color: var(--text);
+  color: var(--text-muted);
   line-height: 1.75;
   background: transparent;
 }
@@ -1533,9 +1605,10 @@ textarea::placeholder,
   margin-bottom: 4px;
   transition: 0.3s linear;
 }
-.formFields .formField label.active {
+.formFields .formField label.active,
+.formFields .formField label:has(+input:focus) {
   transform: translateY(-30px);
-  color: var(--theme-500);
+  color: var(--text);
 }
 .formFields .formField input,
 .formFields .formField input:active,
@@ -1545,12 +1618,15 @@ textarea::placeholder,
 .formFields .formField textarea {
   height: 50px;
   border: 2px solid transparent;
-  border-bottom: 2px solid var(--theme-100);
+  border-bottom: 1px solid var(--text-muted);
   outline: transparent;
+}
+.formField input.active{
+  border: 1px solid red;
 }
 input:focus,
 textarea:focus {
-  border-bottom-color: var(--theme-300) !important;
+  border-bottom-color: var(--text) !important;
   outline: none;
 }
 .formFields .formField textarea {
@@ -1598,9 +1674,6 @@ address > b{
   gap: 1rem;
   font-size: 1.2rem;
   align-items: center;
-}
-.contactMail > * {
-  color: var(--text) !important;
 }
 button[submit] {
   padding: 12px 18px !important;
