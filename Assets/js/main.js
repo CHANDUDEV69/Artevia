@@ -100,7 +100,7 @@ function initTestMonials() {
     testimonialCardNext.style.marginTop = testimonialCardControlsMargin + "px";
     
     const gap = parseFloat(styles.columnGap || styles.gap);
-    const cardStageWidth = card.offsetWidth + gap;
+    const cardStageWidth = card.offsetWidth + (gap / 2);
     let translationXCoords = 0;
     let slidingIndex = 0;
     const sliderPositionHandler = (newCoords) => {
@@ -161,9 +161,8 @@ function serviceCardImgHandler() {
     })
 }
 
-// Document Initial Load Handler
-document.addEventListener("DOMContentLoaded", () => {
-    const aboutMediaHandler = () => {
+
+const aboutMediaHandler = () => {
        const aboutImageWrap = document.querySelector(".aboutImageWrap");
        const availableSpace = aboutImageWrap.getBoundingClientRect().width;
        if(!aboutImageWrap)return;
@@ -193,13 +192,17 @@ document.addEventListener("DOMContentLoaded", () => {
     
     }
     aboutMediaHandler();
+
+    
+// Document Initial Load Handler
+document.addEventListener("DOMContentLoaded", () => {
+    
     initPortfolio();
     initTestMonials();
+    serviceCardImgHandler();
     
     window.addEventListener("resize", ()=>{
     aboutMediaHandler();
 })
-    serviceCardImgHandler();
-    initTestMonials();
     
 })
