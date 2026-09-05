@@ -18,10 +18,10 @@ function initPortfolio() {
     // lightbox image animation handler
     function lightboxImgAnimHandler() {
         document.querySelector(".lbCoutnerVal .currImg").innerText = lightBoxIndex + 1;
-        lightBoxMainImg.classList.add("fadeOut");
-        setTimeout(() => {
-            lightBoxMainImg.classList.remove("fadeOut");
-        }, 500);
+        // lightBoxMainImg.classList.add("fadeOut");
+        // setTimeout(() => {
+        //     lightBoxMainImg.classList.remove("fadeOut");
+        // }, 500);
     }
     let lightBoxIndex = 0;
     // lightbox controlls

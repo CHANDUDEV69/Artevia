@@ -769,16 +769,14 @@ body:has(#lightBoxDialog[open]) {
   box-shadow: var(--shadow-m);
   transition: 0.12s linear;
 }
-#lightBoxDialog .lightBoxImageView img.fadeOut{
+/* #lightBoxDialog .lightBoxImageView img.fadeOut{
   opacity: 0.81;
-  /* scale: 1.001; */
   filter: blur(1px);
 }
 #lightBoxDialog .lightBoxImageView img.fadeIn{
   opacity: 1;
-  /* scale: 1; */
   filter: blur(1px);
-}
+} */
 .lightBoxImageView .prevImg,
 .lightBoxImageView .nextImg {
   position: absolute;
@@ -1204,7 +1202,8 @@ body:has(#lightBoxDialog[open]) {
   aspect-ratio: 1;
 }
 .lightBoxImage{
-  border: 12px solid var(--text-muted);
+  padding: 1rem;
+  border: 2px solid var(--text);
 }
 .closeModalController {
   position: absolute;
