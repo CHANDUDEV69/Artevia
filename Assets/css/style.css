@@ -565,34 +565,44 @@ p {
   position: relative;
   color: #fff;
   background: linear-gradient(45deg, var(--theme-500), var(--theme-400), var(--theme-500));
+  overflow: hidden;
 }
 .ctaActionControllers .primaryctaBtn::before,
-.ctaActionControllers .primaryctaBtn::after{
+.ctaActionControllers .primaryctaBtn::after,
+.ctaActionControllers .secondaryctaBtn::before,
+.ctaActionControllers .secondaryctaBtn::after{
   position: absolute;
   content: "";
   width: 100%;
-  height: 2px;
-  background: linear-gradient(45deg, transparent, var(--text-muted), transparent);
-  opacity: 1;
-  /* filter: blur(1px); */
+  height: 1px;
+  background: linear-gradient(45deg, transparent, var(--text), transparent);
+  left: 0;
+  /* margin-left: 20%; */
   transition: 0.3s ease-in-out;
 }
 
-.ctaActionControllers .primaryctaBtn::before{
+.ctaActionControllers .primaryctaBtn::before,
+.ctaActionControllers .secondaryctaBtn::before{
   top: 0;
-  left: 0;
 }
-.ctaActionControllers .primaryctaBtn::after{
-  right: 0;
+.ctaActionControllers .primaryctaBtn::after,
+.ctaActionControllers .secondaryctaBtn::after{
   bottom: 0;
 }
-.ctaActionControllers .primaryctaBtn:hover::before{
-  width: 60%;
-  background: linear-gradient(45deg, var(--text-muted), transparent, transparent);
+
+.ctaActionControllers .secondaryctaBtn::before,
+.ctaActionControllers .secondaryctaBtn::after{
+  opacity: 0;
+  width: 100%;
 }
+.ctaActionControllers .primaryctaBtn:hover::before, 
 .ctaActionControllers .primaryctaBtn:hover::after{
-  width: 60%;
-  background: linear-gradient(45deg, transparent, transparent, var(--text-muted));
+  height: 2px;
+  width: 100%;
+}
+.ctaActionControllers .secondaryctaBtn:hover::before, 
+.ctaActionControllers .secondaryctaBtn:hover::after{
+  opacity: 0.9;
 }
 .primaryctaBtn-reverse{
   background: linear-gradient(45deg, var(--theme-50), #fff, var(--theme-50)) !important;

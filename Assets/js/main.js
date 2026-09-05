@@ -2,13 +2,11 @@
 let target = 0;
 const svgNS = "http://www.w3.org/2000/svg";
 
-
-
 function bannerElemAnimationHandler(){
     const bannerDecorElem = document.querySelector(".bannerDecorElem");
     bannerDecorElem.classList.add("smoothSwing");
 }
-// portfolio js
+// Portfolio section handler
 function initPortfolio() {
     const lightBoxDialog = document.querySelector("#lightBoxDialog");
     const lightBoxImageView = document.querySelector(".lightBoxImageView");
@@ -86,8 +84,7 @@ function initPortfolio() {
     })
 }
 
-
-// testimonials js
+// Testimonials section handler
 function initTestMonials() {
     const testimonialCards = document.querySelector(".testimonialCardsStage");
     if (!testimonialCards) return;
@@ -155,9 +152,7 @@ function initTestMonials() {
     })
 }
 
-
-
-// services card images load handler
+// Services card images load handler
 function serviceCardImgHandler() {
     const serviceCards = document.querySelectorAll(".serviceCardImage");
     serviceCards.forEach((serviceCard) => {
@@ -166,8 +161,7 @@ function serviceCardImgHandler() {
     })
 }
 
-
-
+// Document Initial Load Handler
 document.addEventListener("DOMContentLoaded", () => {
     const aboutMediaHandler = () => {
        const aboutImageWrap = document.querySelector(".aboutImageWrap");
@@ -209,40 +203,3 @@ document.addEventListener("DOMContentLoaded", () => {
     initTestMonials();
     
 })
-
-
-// const lazyIntObserver = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//             const section = entry.target;
-//             const templateId = section.dataset.template;
-//             const template = document.getElementById(templateId);
-//             if (template) {
-//                 const content = template.content.cloneNode(true);
-//                 section.replaceWith(content);
-//                 requestAnimationFrame(() => {
-//                     initPortfolio();
-//                 });
-//                 setTimeout(() => {
-//                     document.querySelector(`.${section.id}`).classList.add("fadeInUp");
-
-//                 }, 300)
-//             }
-//             lazyIntObserver.unobserve(entry.target);
-//         }
-//     })
-// }, {
-//     root: null,
-//     threshold: 0.2,
-//     rootMargin: "100px"
-// });
-
-// const lazySections = document.querySelectorAll(".lazy-section");
-// lazySections.forEach((lazySection) => {
-//     lazyIntObserver.observe(lazySection);
-// });
-
-
-
-
-
