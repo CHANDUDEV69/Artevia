@@ -602,7 +602,7 @@ p {
 }
 .ctaActionControllers .secondaryctaBtn:hover::before, 
 .ctaActionControllers .secondaryctaBtn:hover::after{
-  opacity: 0.9;
+  opacity: 1;
 }
 .primaryctaBtn-reverse{
   background: linear-gradient(45deg, var(--theme-50), #fff, var(--theme-50)) !important;
