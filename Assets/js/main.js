@@ -202,7 +202,9 @@ document.addEventListener("DOMContentLoaded", () => {
     serviceCardImgHandler();
     
     window.addEventListener("resize", ()=>{
-    aboutMediaHandler();
-})
+        aboutMediaHandler();
+    });
+
+    window.getStartedDialog.showModal();
     
 })

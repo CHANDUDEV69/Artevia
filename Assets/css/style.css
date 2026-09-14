@@ -716,34 +716,55 @@ body:has(#lightBoxDialog[open]) {
 }
 #getStartedDialog,
 #lightBoxDialog {
-  /* background: var(--theme-600); */
   background: transparent;
   margin: auto;
   padding: 1.2rem;
+  box-shadow: var(--shadow-s);
+  border: none;
+  outline: 0px transparent;
 }
 #getStartedDialog[open],
 #lightBoxDialog[open] {
   position: fixed;
   width: 100%;
   background: transparent;
-  /* margin-left: 1rem; */
   min-height: 100%;
+  z-index: 1200;
   top: 0;
-  z-index: 120;
-  background: var(--bg-light);
-  border: 1px solid transparent;
 }
 #getStartedDialog:focus,
 #lightBoxDialog:focus {
-  outline: none;
+  outline: 1px solid transparent;
 }
 #getStartedDialog::backdrop,
 #lightBoxDialog::backdrop {
   background: var(--bg-light);
-  opacity: 0.9;
+  opacity: 0.81;
+}
+#getStartedDialog[open]{
+  min-width:300px;
+  max-width: 810px;
+  min-height: 81vh;
+  max-height: 81vh;
+  margin-top: 9.5vh;
+  border-radius: 0.6rem;
+}
+
+#getStartedDialog::before,
+#getStartedDialog::after{
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: radial-gradient(var(--bg), var(--bg-light), var(--theme-200));
+  opacity: 0.6;
+}
+
+#getStartedDialog::after{
+  background: radial-gradient(var(--bg), var(--bg-light), transparent);
+  border: 1px solid var(--text);
 }
 .portfolio{
-  box-shadow: var(--shadow-s);
+  box-shadow: var(--shadow-l);
 }
 .lightBoxImageView {
   position: absolute;
