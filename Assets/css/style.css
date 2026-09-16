@@ -273,7 +273,7 @@ section {
   /* background: var(--theme-bg-dark); */
   z-index: 10;
 }
-section h2 {
+section h2, .gsdcContentHeading h2 {
   font-size: 42px;
   font-size: clamp(42px, 4.2vw, 60px);
   color: var(--text);
@@ -281,7 +281,9 @@ section h2 {
   line-height: 100%;
 }
 footer .titleCaption,
-section .titleCaption {
+section .titleCaption,
+.gsdcContentSubHeading .titleCaption
+{
   letter-spacing: 1px;
   line-height: 125%;
   font-family: var(--lato);
@@ -721,14 +723,21 @@ body:has(#lightBoxDialog[open]) {
   padding: 1.2rem;
   box-shadow: var(--shadow-s);
   border: none;
-  outline: 0px transparent;
+  outline: 1px solid transparent;
+  height: max-content;
+}
+
+
+#getStartedDialog .getStartedDialogRow,
+#lightBoxDialog .getStartedDialogRow{
+  position: relative;
+  z-index: 1 ;
 }
 #getStartedDialog[open],
 #lightBoxDialog[open] {
   position: fixed;
   width: 100%;
   background: transparent;
-  min-height: 100%;
   z-index: 1200;
   top: 0;
 }
@@ -739,30 +748,120 @@ body:has(#lightBoxDialog[open]) {
 #getStartedDialog::backdrop,
 #lightBoxDialog::backdrop {
   background: var(--bg-light);
-  opacity: 0.81;
+  opacity: 0.9;
 }
 #getStartedDialog[open]{
   min-width:300px;
   max-width: 810px;
-  min-height: 81vh;
-  max-height: 81vh;
-  margin-top: 9.5vh;
+  margin-top: 21px;
+  padding: 3rem;
   border-radius: 0.6rem;
+  overflow: hidden;
 }
-
 #getStartedDialog::before,
 #getStartedDialog::after{
   position: absolute;
   content: "";
   inset: 0;
   background: radial-gradient(var(--bg), var(--bg-light), var(--theme-200));
+  /* border: 1px solid var(--text-muted); */
   opacity: 0.6;
 }
-
 #getStartedDialog::after{
   background: radial-gradient(var(--bg), var(--bg-light), transparent);
-  border: 1px solid var(--text);
 }
+.getStartedDialogRow{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.1rem;
+}
+.getStartedDialogCol{
+  /* border: 1px solid lime; */
+}
+.gsdcContentHeading h2{
+  font-size: 42px;
+  font-size: clamp(3rem, 3.6rem,60px);
+}
+.gsdcContentSubHeading p.titleCaption{
+  font-size: 1rem;
+  font-size: clamp(0.6rem, 1vw, 1rem);
+}
+.gsdformFields{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(30px, 1fr));
+  gap: 1rem;
+}
+.gsdFormField{
+  position: relative;
+  background: transparent;
+}
+.gsdffInput{
+  position: relative;
+  border-radius: 0.3rem;
+  background: transparent;
+  overflow: hidden;
+}
+.gsdffInput::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--text-muted);
+  opacity: 0.21;
+  z-index: -1;
+}
+.gsdFormField input,
+.gsdFormField textarea{
+  position: relative;
+  padding: 0.9rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.3rem;
+  width: 100%;
+  outline: transparent;
+}
+.gsdFormField input::placeholder{
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+.getstartedImage{
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  background-image: url("../images/getstarted.webp");
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-s);
+}
+.getstartedImage::before{
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: linear-gradient(180deg, var(--bg), #0000, #0000);
+  opacity: 0.81;
+}
+.getstartedImage::after{
+  position: absolute;
+  content: "";
+  width:2px;
+  height: 100%;
+  left: 0;
+  background: linear-gradient(180deg, var(--theme-300), var(--theme-100));
+  filter: blur(1px);
+  opacity: 0.81;
+}
+
+
+
+
+
+
+
+
 .portfolio{
   box-shadow: var(--shadow-l);
 }

@@ -204,7 +204,10 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", ()=>{
         aboutMediaHandler();
     });
-
-    window.getStartedDialog.showModal();
+    const getctaBtn = document.getElementById("getctaBtn");
+    getctaBtn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        window.getStartedDialog.showModal();
+    })
     
 })
