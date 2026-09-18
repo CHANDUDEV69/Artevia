@@ -8,6 +8,8 @@
   --bg-light: hsl(0 0% 10%);
   --text: hsl(0 0% 95%);
   --text-muted: hsl(0 0% 70%);
+  --border-color: hsl(0, 0%, 30%);
+  --border: 1px solid hsl(0, 0%, 30%);
 
   --theme-extra-light: #fbf7f4;
   --theme-50: #f8f3ee;
@@ -85,7 +87,6 @@ body:has(.preloader.active) {
 }
 
 .card-btn{
-  border: 1px solid var(--theme-50);
   border-radius: 0.3rem;
   padding: 4.2px 12px !important;
   color: var(--theme-300) !important;
@@ -177,13 +178,13 @@ body:has(.preloader.active) {
   margin-top: 0px;
   transition: 0.3s ease-in-out;
 }
-@starting-style {
+/* @starting-style {
   .loadingContent li {
     opacity: 0;
     color: #000;
     margin-top: 21px;
   }
-}
+} */
 .loadData span {
   color: #441b06;
 }
@@ -426,13 +427,13 @@ p {
   border: none;
   font-weight: 500;
   letter-spacing: 1.2px;
-  transition: 0.3s;
+  transition: 0.12s;
   box-shadow: var(--shadow-m);
 }
 .secondaryctaBtn{
   color: var(--text);
   background: transparent !important;
-  border: 1px solid var(--text-muted) !important;
+  border: var(--border) !important;
   box-shadow: var(--shadow-m);
   border-radius: 0.3rem;
   transition: 0.3s;
@@ -577,7 +578,7 @@ p {
   content: "";
   width: 100%;
   height: 1px;
-  background: linear-gradient(45deg, transparent, var(--text), transparent);
+  background: linear-gradient(45deg, transparent, var(--text-muted), transparent);
   left: 0;
   /* margin-left: 20%; */
   transition: 0.3s ease-in-out;
@@ -604,7 +605,7 @@ p {
 }
 .ctaActionControllers .secondaryctaBtn:hover::before, 
 .ctaActionControllers .secondaryctaBtn:hover::after{
-  opacity: 1;
+  opacity: 0.42;
 }
 .primaryctaBtn-reverse{
   background: linear-gradient(45deg, var(--theme-50), #fff, var(--theme-50)) !important;
@@ -771,12 +772,24 @@ body:has(#lightBoxDialog[open]) {
   background: radial-gradient(var(--bg), var(--bg-light), transparent);
 }
 .getStartedDialogRow{
+  position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2.1rem;
 }
-.getStartedDialogCol{
-  /* border: 1px solid lime; */
+.closegsd{
+  position: absolute;
+  z-index: 1;
+  right: 0;
+}
+.getStartedDialogRow span svg{
+  fill: var(--text-muted);
+  opacity: 0.6;
+  transition: 0.21s;
+  cursor: pointer;
+}
+.getStartedDialogRow span:hover svg{
+  opacity: 1;
 }
 .gsdcContentHeading h2{
   font-size: 42px;
@@ -842,7 +855,6 @@ body:has(#lightBoxDialog[open]) {
   content: "";
   inset: 0;
   background: linear-gradient(180deg, var(--bg), #0000, #0000);
-  opacity: 0.81;
 }
 .getstartedImage::after{
   position: absolute;
@@ -1242,9 +1254,11 @@ body:has(#lightBoxDialog[open]) {
   transition: 0.21s linear;
   background: transparent;
   box-shadow: var(--shadow-l);
+  border: var(--border);
   overflow: hidden;
 }
-.servicesGrid .serviceCard::before{
+.servicesGrid .serviceCard::before,
+.servicesGrid .serviceCard::after{
   content: "";
   position: absolute;
   width: 100%;
@@ -1254,9 +1268,29 @@ body:has(#lightBoxDialog[open]) {
   opacity: 0.12;
   z-index: -1;
 }
-.serviceCard.featured {
-  /* border: 1px solid var(--bg-light); */
-  /* background: #fff; */
+.servicesGrid .serviceCard::after{
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(90deg, transparent, var(--bg), var(--text-muted), var(--bg), transparent);
+  opacity: 0;
+  /* transform: translateX(-50%) rotate(135deg); */
+  border: none;
+  transition: 0.42s linear;
+  z-index: -1;
+  opacity: 0;
+}
+.servicesGrid .serviceCard:hover::after{
+  animation: fastFadeOut 0.6s 1;
+}
+@keyframes fastFadeOut{
+  from{
+    transform: translateX(-50%) rotate(135deg);
+    opacity: 0.06;
+  }
+  to{
+    transform: translateX(100%) rotate(135deg);
+    opacity: 0;
+  }
 }
 .serviceCard:hover {
   transform: translateY(-4px);
@@ -1346,6 +1380,8 @@ body:has(#lightBoxDialog[open]) {
 }
 .lightBoxImage {
   border-radius: 0.3rem;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
   transition: 0.21s ease-in-out;
   cursor: zoom-in;
 }
@@ -1356,10 +1392,6 @@ body:has(#lightBoxDialog[open]) {
 .lightBoxImageGridWrap .lightBoxImage {
   width: 100%;
   aspect-ratio: 1;
-}
-.lightBoxImage{
-  padding: 1rem;
-  border: 2px solid var(--text);
 }
 .closeModalController {
   position: absolute;
@@ -1406,7 +1438,7 @@ body:has(#lightBoxDialog[open]) {
   min-height: 420px;
   border-radius: 2.1rem;
   overflow: hidden;
-  border: 2px solid var(--bg-light);
+  border: 3px solid var(--border-color);
 }
 .testmonialStageWrap {
   position: relative;
@@ -1655,6 +1687,7 @@ body:has(#lightBoxDialog[open]) {
   background: var(--bg-light);
   padding: 1rem;
   border-radius: 0.9rem;
+  border: var(--border);
 }
 /* Blogs */
 .blogs::before,
@@ -1688,7 +1721,7 @@ body:has(#lightBoxDialog[open]) {
 .flexBlog .blogCard,
 .blogsGrid .blogCard {
   background: transparent;
-  border: 1px solid var(--bg-light);
+  border: var(--border);
   border-radius: 0.9rem;
   box-shadow: var(--shadow-s);
   padding: 1.2rem 1.2rem 1.5rem 1.2rem;
@@ -1760,6 +1793,7 @@ body:has(#lightBoxDialog[open]) {
   padding: 1rem;
   font-size: clamp(1rem, 3.9vw, 18px);
   box-shadow: var(--shadow-m);
+  border: var(--border)
 }
 
 .contactUs form .formFields {
@@ -1794,6 +1828,7 @@ body:has(#lightBoxDialog[open]) {
 .contactInfoBlock{
   padding: 1rem !important;
   box-shadow: var(--shadow-m);
+  border: var(--border);
 }
 .formFields .formField input,
 .formFields .formField select,
