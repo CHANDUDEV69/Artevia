@@ -1,3 +1,25 @@
+@media screen and (max-width: 1200px) {
+  .about .aboutRow {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+  .testimonialRow{
+    grid-template-columns: 1fr !important;
+  }
+  .aboutCountersCol .aboutCounters {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    gap: 1.2rem;
+    margin-block: 24px;
+  }
+  .testimonialImageWrap{
+    display: none !important;
+    opacity: 0;
+  }
+  
+}
 @media screen and (max-width: 1023px) {
   .header {
     position: relative;
@@ -18,7 +40,7 @@
     padding-top: 90px !important;
   }
   section.fadeInUp{
-    padding: 1.5rem;
+    padding-block: 1.5rem;
     opacity: 1;
   }
   .header .navLinksWrap {
@@ -116,30 +138,13 @@
   .bannerImage img {
     width: 100%;
   }
-  .about .aboutRow {
-    display: grid;
-
-    grid-template-columns: 1fr !important;
-  }
   .decorLamps {
     transform: translate(72vw, -50%) !important;
     scale: 0.6;
-    opacity: 1;
     z-index: 1;
-  }
-  .aboutImageWrap {
-    /* padding: 5.1rem 0.6rem !important; */
-  }
-  .aboutCounters {
-    position: relative;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
-    margin-block: 24px;
   }
   .aboutCounters .aboutCounter {
     align-content: center !important;
-    background: rgba(255, 250, 237, 0.604);
-    border: 3px solid var(--bg-light);
   }
     
 .breadcrumbBgImage{
@@ -153,7 +158,9 @@
       minmax(clamp(330x, 30vw, 18rem), 1fr)
     ) !important;
   }
-
+  .smallTestCards{
+    display: none;
+  }
   /* contact us */
   .contactRow {
     display: grid;
@@ -183,17 +190,9 @@
   /* margin-bottom: 24px; */
 }
 
-.testimonialRow{
-  display: grid;
-  grid-template-columns: 1fr !important;
-}
 .testmonialStageWrap{
   display: block !important;
 }
-.testimonialImageWrap{
-  display: none;
-}
-
 .aboutBlog {
   display: grid;
   grid-template-columns: 1fr !important;
@@ -231,15 +230,15 @@
   .heroMetrics, .aboutCounters {
     grid-template-columns: repeat(1, 1fr) !important;
   }
+  .aboutCountersCol .aboutCounters {
+    display: block;
+  }
   .aboutCounter{
     min-width: 100%;
   }
   .banner .ctaActionControllers{
     display: grid !important;
     gap: 1rem;
-  }
-  .servicesGrid .serviceCard .cardRow {
-    display: grid;
   }
   
   .serviceCard .cardRow .serviceCardImage{
@@ -250,18 +249,28 @@
   }
   .testimonialCard {
     display: block !important;
+    padding: 0px !important;
+  }
+  .testimonialCard .testCardContent{
+    padding: 1rem 0rem !important;
   }
   .smallTestCard {
     margin-top: 1rem;
+  }
+  .testimonialCard,
+  .testimonialCard::before,
+  .testimonialCard::after {
+    background: transparent !important;
+    box-shadow: none;
   }
   .testCardImg {
     height: 300px !important;
     /* max-height: 300px; */
   }
-  .testimonialCardPrev,
-  .testimonialCardNext {
-    /* display: none !important; */
+  .contactRow {
+    padding: 0px;
   }
+
   .testCardContent .contentProfile,
   .designersGrid {
     /* display: grid !important;
@@ -280,9 +289,6 @@
 }
   .testCardImg {
     min-width: 100% !important;
-  }
-  .smallTestCards {
-    display: block !important;
   }
   .smallTestCard {
     display: grid !important;

@@ -172,6 +172,31 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(section);
     });
 
+    const getStartedDialog = document.getElementById("getStartedDialog");
+    const getctaBtn = document.getElementById("getctaBtn");
+    const closegsd = getStartedDialog.querySelector(".closegsd");
+
+    // Open dialog
+    getctaBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.time("showModal");
+    getStartedDialog.showModal();
+    console.timeEnd("showModal");
+    });
+
+    // Close button
+    closegsd.addEventListener("click", (e) => {
+        e.preventDefault();
+        getStartedDialog.close();
+    });
+
+    // Click on backdrop
+    getStartedDialog.addEventListener("click", (e) => {
+        if (e.target === getStartedDialog) {
+            getStartedDialog.close();
+        }
+    });
+
     function serviceCardImgHandler() {
         const serviceCards = document.querySelectorAll(".serviceCardImage");
         serviceCards.forEach((serviceCard) => {

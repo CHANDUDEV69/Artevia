@@ -1,10 +1,3 @@
-/* Autumn Harvest: ["#ede0d4","#e6ccb2","#ddb892","#b08968","#7f5539","#9c6644"] */
-/* Deep Sea: ["#0d1b2a","#1b263b","#415a77","#778da9","#e0e1dd"] */
-:root{
-  /* solid colors */
-
-}
-
 @media (prefers-color-scheme: light){
    :root{
   --bg-dark: hsl(0, 0%, 95%);
@@ -12,6 +5,8 @@
   --bg-light: hsl(0 0% 90%);
   --text: hsl(0 0% 5%);
   --text-muted: hsl(0 0% 30%);
+  --border-color: hsl(0, 0%, 81%);
+  --border: 1px solid hsl(0, 0%, 81%);
 
   --theme-extra-light: #fbf7f4;
   --theme-50: #f8f3ee;
@@ -20,20 +15,16 @@
   --theme-300: #7f5539;
   --theme-400: #b08968;
   --theme-500: #7f5539;
-  --theme-600: #9c6644;
-  }
-
-  .header{
-    /* box-shadow: var(--shadow-s); */
+  --theme-600: #9c6644; 
   }
   .header::before,
   .header.fixed::after{
     box-shadow: var(--shadow-s);
   }
   .navLinksWrap .navCTA a {
-    background: var(--theme-500);
+    background: var(--orange-gradient);
     color: #fff;
-    box-shadow: var(--shadow-m);
+    box-shadow: var(--shadow-s);
   } 
   .header li a.active {
     color: var(--theme-500);
@@ -44,19 +35,69 @@
   .logo h1{
     color: var(--theme-500);
   }
+  section{
+    background: hsl(0 0% 96%);
+  }
+  .breadcrumb::before{
+  background: radial-gradient(
+    var(--bg-light) 20%,
+    var(--theme-300)
+  );
+}
+  .getstartedImage::before{
+    background: linear-gradient(90deg, #fff6, #fff0, #fff0) !important;
+    opacity: 0.51;
+  }
+  .getstartedImage::after{
+    background: linear-gradient(180deg, #fff6, #fff0, #fff0) !important;
+    opacity: 0.51;
+  }
   .aboutCounter{
     background: var(--theme-50) !important;
-    /* border: 1px solid var(--bg); */
     box-shadow: none !important;
   }
+  .ctaActionControllers .primaryctaBtn::before,
+  .ctaActionControllers .primaryctaBtn::after,
+  .ctaActionControllers .secondaryctaBtn::before,
+  .ctaActionControllers .secondaryctaBtn::after{
+    background: linear-gradient(45deg, transparent, var(--bg-light), transparent);
+  }
+  .counterData,
+  .counterVal{
+    color: var(--theme-300);
+  }
+  .decorLamps{
+    opacity: 0.9;
+  }
   .ThemeBg-Light{
-    background: #fff;
+    background: var(--bg-light);
   }
   .decorLamps svg {
     opacity: 0.42;
   }
-
-.bottomCTA h2, .bottomCTA p {
-  color: var(--text) !important;
-}
+  .bottomCTA h2, .bottomCTA p {
+    color: var(--text) !important;
+  }
+  .portfolio{
+    box-shadow: var(--shadow-s);
+  }
+  .lightBoxImageView .prevImg,
+  .lightBoxImageView .nextImg {
+    background: var(--bg);
+    box-shadow: var(--shadow-s);
+  }
+  
+  .achiveCounter::after,
+  .philosophyCards .philosophyCard::after,
+  .whyChCard::after, 
+  .servicesList .serviceCard::after{
+    background: linear-gradient(90deg, transparent, var(--theme-100), transparent);
+  }
+  @media screen and (max-width: 1023px){
+    
+  .aboutCounters .aboutCounter {
+    background: transparent;
+  }
+    
+  }
 }

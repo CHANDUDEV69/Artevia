@@ -19,9 +19,11 @@
   --theme-400: #b08968;
   --theme-500: #7f5539;
   --theme-600: #9c6644;
+  --theme-orange: hsl(39, 100%, 27%);
 
   --gradient-dark: linear-gradient(45deg, #9c6644, #b08968, #9c6644);
   --gradient-light: linear-gradient(45deg, #ddb892, #e6ccb2, #ddb892);
+  --orange-gradient: linear-gradient(45deg, var(--theme-orange), hsl(39, 100%, 41%), var(--theme-orange));
 
   --shadow-s: inset 0px 1px 2px #ffffff30,
               0px 1px 2px #00000015,
@@ -137,12 +139,13 @@ body:has(.preloader.active) {
 .plCircle .plCounter .plCounterValSymb{
   color: var(--text-muted);
   font-size: 3rem;
+  font-size: 3vw;
   font-weight: 400;
   font-family: var(--lato);
 }
 .plCircle .plCounter .plCounterValSymb{
   position: absolute;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 .plCircle::before{
   position: absolute;
@@ -222,7 +225,7 @@ body:has(.preloader.active) {
   to{margin-top: 0px}
 }
 .header.fixed::before{
-  background: linear-gradient(180deg, var(--bg-dark) 60% ,  #0000);
+  background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark) ,  #0000);
 }
 .header.fixed::after{
   background: linear-gradient(180deg, var(--bg-dark));
@@ -329,11 +332,11 @@ p {
 }
 .navLinksWrap .navCTA a {
   padding: 0.6rem 0.9rem;
-  background: var(--bg-light);
-  color: var(--theme-300);
+  background: var(--theme-orange);
+  color: var(--text);
   border-radius: 3px;
   width: max-content;
-  box-shadow: var(--shadow-l);
+  box-shadow: var(--shadow-s);
 }
   
 /* Banner */
@@ -372,6 +375,22 @@ p {
   transform: translateX(0%);
   opacity: 1;
 }
+.banner h1 span{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  width: clamp(3rem, 3vw, 120px);
+  height: clamp(3rem, 3vw, 120px);
+  left: 0;
+  top: 0;
+  margin-top: -1vw;
+  margin-left: -1vw;
+  border-radius: 50%;
+  opacity: 1;
+  background: var(--theme-orange);
+  opacity: 0.9;
+  z-index: -1;
+}
 .bannerContentWrap {
   position: relative;
 }
@@ -394,9 +413,9 @@ p {
   display: flex;
   gap: 0.6rem;
   font-family: var(--lato);
-  font-size: 2.4vw;
+  font-size: 18px;
+  font-size: clamp(18px, 2.1vw, 24px);
   font-weight: 300;
-  font-size: clamp(16px, 3vw, 24px);
   padding: 8px 0px;
   align-items: center;
   color: var(--text-muted);
@@ -418,27 +437,28 @@ p {
   gap: 0.6rem;
   padding: 10px 21px;
   padding: clamp(6px, 1vw, 12px) clamp(9px, 3vw, 21px);
-  font-size: 24px;
-  font-size: clamp(16px, 3vw, 24px);
+  font-size: 18px;
+  font-size: clamp(18px, 2.1vw, 24px);
   font-family: var(--playfair);
   border-radius: 3px;
   outline: 1px solid transparent;
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
   font-weight: 500;
   letter-spacing: 1.2px;
   transition: 0.12s;
-  box-shadow: var(--shadow-m);
+  box-shadow: var(--shadow-s);
+  color: var(--text);
 }
-.secondaryctaBtn{
+.secondaryctaBtn {
   color: var(--text);
   background: transparent !important;
   border: var(--border) !important;
-  box-shadow: var(--shadow-m);
+  box-shadow: var(--shadow-s);
   border-radius: 0.3rem;
   transition: 0.3s;
 }
-.heroMetrics{
+.heroMetrics {
   position: relative;
   width:auto;
   height: auto;
@@ -455,7 +475,7 @@ p {
   z-index: 10;
 }
 .heroMetrics::before,
-.heroMetrics::after{
+.heroMetrics::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -464,13 +484,13 @@ p {
   background: linear-gradient(90deg, transparent, var(--text-muted), transparent);
   opacity: 0.3;
 }
-.heroMetrics::before{
+.heroMetrics::before {
   top: 0;
 }
-.heroMetrics::after{
+.heroMetrics::after {
   bottom: 0;
 }
-.heroMetrics svg{
+.heroMetrics svg {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -478,10 +498,11 @@ p {
   top: 0;
   opacity: 0.03;
 }
-.metricCounter{
+.metricCounter {
   position: relative;
   width: 100%;
   min-width: 90px;
+  min-height: 120px;
   padding: 1rem;
   border-radius: 0.3rem;
   justify-items: center;
@@ -491,7 +512,7 @@ p {
   overflow: hidden;
 }
 .metricCounter::before,
-.metricCounter::after{
+.metricCounter::after {
   position: absolute;
   content: "";
   inset: 0;
@@ -501,16 +522,16 @@ p {
   opacity: 0.12;
   z-index: -1;
 }
-.metricCounter::after{
+.metricCounter::after {
   inset: initial;
   width: 100%;
   height: 2px;
   top: 0;
   left: 0;
   background: linear-gradient(90deg, transparent, var(--text-muted), transparent);
-  opacity: 0.3;
+  opacity: 0.12;
 }
-.metricCounter .counterVal.bounceUp{
+.metricCounter .counterVal.bounceUp {
   animation: bounceUp 1.2s 1 ease-in-out;
 }
 @keyframes bounceUp {
@@ -526,27 +547,27 @@ p {
   top: 0;
   left: 0;
 } */
-.counterVal{
+.counterVal {
   font-size: 2.1vw;
-  font-size: clamp(21px, 2.1vw, 3rem);
+  font-size: clamp(24px, 2.1vw, 3.9rem);
   font-family: var(--lato);
 }
 .counterData,
-.counterVal{
+.counterVal {
   color: var(--text);
   font-weight: bold;
 }
-.counterText{
+.counterText {
   position: absolute;
   font-size: 18px;
   font-size: clamp(18px, 1.5vw, 1.5rem);
   padding: 3px;
   color: var(--theme-text);
 }
-.metricCounter h3{
-  color: var(--text-muted);
+.metricCounter h3 {
+  color: var(--theme-300);
   font-size: 18px;
-  font-size: clamp(18px, 1.5vw, 1.5rem);
+  font-size: clamp(18px, 2.1vw, 24px);
   margin-top: 0.6rem;
 }
 
@@ -561,13 +582,12 @@ p {
 .ctaActionControllers .primaryctaBtn:focus,
 .ctaActionControllers .secondaryctaBtn:hover,
 .ctaActionControllers .secondaryctaBtn:hover{
-  /* box-shadow: var(--shadow-l); */
   outline: 1px solid transparent;
 }
 .ctaActionControllers .primaryctaBtn {
   position: relative;
-  color: #fff;
-  background: linear-gradient(45deg, var(--theme-500), var(--theme-400), var(--theme-500));
+  /* color: #fff; */
+  background: var(--orange-gradient);
   overflow: hidden;
 }
 .ctaActionControllers .primaryctaBtn::before,
@@ -577,13 +597,12 @@ p {
   position: absolute;
   content: "";
   width: 100%;
-  height: 1px;
+  height: 0px;
   background: linear-gradient(45deg, transparent, var(--text-muted), transparent);
   left: 0;
-  /* margin-left: 20%; */
   transition: 0.3s ease-in-out;
 }
-
+/* 
 .ctaActionControllers .primaryctaBtn::before,
 .ctaActionControllers .secondaryctaBtn::before{
   top: 0;
@@ -600,12 +619,13 @@ p {
 }
 .ctaActionControllers .primaryctaBtn:hover::before, 
 .ctaActionControllers .primaryctaBtn:hover::after{
-  height: 2px;
+  height: 1px;
   width: 100%;
-}
-.ctaActionControllers .secondaryctaBtn:hover::before, 
-.ctaActionControllers .secondaryctaBtn:hover::after{
-  opacity: 0.42;
+} */
+.ctaActionControllers .primaryctaBtn:hover, 
+.ctaActionControllers .secondaryctaBtn:hover{
+  border: 1px solid transparent;;
+  box-shadow: inset var(--shadow-m);
 }
 .primaryctaBtn-reverse{
   background: linear-gradient(45deg, var(--theme-50), #fff, var(--theme-50)) !important;
@@ -628,7 +648,7 @@ p {
 }
 .controllersInfo {
   margin-top: 0.3rem;
-  color: var(--theme-50);
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 .bannerImage {
@@ -725,13 +745,15 @@ body:has(#lightBoxDialog[open]) {
   box-shadow: var(--shadow-s);
   border: none;
   outline: 1px solid transparent;
-  height: max-content;
 }
-
+#lightBoxDialog{
+  height: 100%;
+}
 
 #getStartedDialog .getStartedDialogRow,
 #lightBoxDialog .getStartedDialogRow{
   position: relative;
+  min-width:300px;
   z-index: 1 ;
 }
 #getStartedDialog[open],
@@ -749,12 +771,10 @@ body:has(#lightBoxDialog[open]) {
 #getStartedDialog::backdrop,
 #lightBoxDialog::backdrop {
   background: var(--bg-light);
-  opacity: 0.9;
+  opacity: 0.96;
 }
 #getStartedDialog[open]{
-  min-width:300px;
   max-width: 810px;
-  margin-top: 21px;
   padding: 3rem;
   border-radius: 0.6rem;
   overflow: hidden;
@@ -774,16 +794,21 @@ body:has(#lightBoxDialog[open]) {
 .getStartedDialogRow{
   position: relative;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2.1rem;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+.getStartedDialogCol{
+  position: relative;
 }
 .closegsd{
   position: absolute;
   z-index: 1;
   right: 0;
+  margin-top: 0.21rem;
+  margin-right: 0.21rem;
 }
 .getStartedDialogRow span svg{
-  fill: var(--text-muted);
+  fill: var(--text);
   opacity: 0.6;
   transition: 0.21s;
   cursor: pointer;
@@ -825,6 +850,7 @@ body:has(#lightBoxDialog[open]) {
   z-index: -1;
 }
 .gsdFormField input,
+.gsdFormField select,
 .gsdFormField textarea{
   position: relative;
   padding: 0.9rem;
@@ -833,49 +859,46 @@ body:has(#lightBoxDialog[open]) {
   border-radius: 0.3rem;
   width: 100%;
   outline: transparent;
+  color: var(--text);
+}
+.gsdFormField select{
+  padding: 1rem;
+  color: var(--text-muted);
+}
+.gsdFormField select option{
+  color: var(--text);
+  background: var(--bg-light);
+  padding-block: 0.42rem !important;
 }
 .gsdFormField input::placeholder{
   font-size: 1rem;
   color: var(--text-muted);
 }
 .getstartedImage{
-  position: absolute;
-  width: 300px;
+  position: relative;
+  width: 100%;
   height: 100%;
   background-image: url("../images/getstarted.webp");
   background-size: cover;
   background-position: center;
-  border-top-left-radius: 0.3rem;
-  border-bottom-left-radius: 0.3rem;
-  overflow: hidden;
+  border-radius: 0.3rem;
   box-shadow: var(--shadow-s);
+  overflow: hidden;
 }
-.getstartedImage::before{
-  position: absolute;
-  content: "";
-  inset: 0;
-  background: linear-gradient(180deg, var(--bg), #0000, #0000);
-}
+.getstartedImage::before,
 .getstartedImage::after{
   position: absolute;
   content: "";
-  width:2px;
-  height: 100%;
-  left: 0;
-  background: linear-gradient(180deg, var(--theme-300), var(--theme-100));
-  filter: blur(1px);
-  opacity: 0.81;
+  inset: 0;
+  background: linear-gradient(90deg, #0008, #0003, #0000);
+}
+.getstartedImage::after{
+  background: linear-gradient(180deg, #0008, #0003, #0000);
 }
 
-
-
-
-
-
-
-
+/* Portfolio CSS */
 .portfolio{
-  box-shadow: var(--shadow-l);
+  box-shadow: var(--shadow-s);
 }
 .lightBoxImageView {
   position: absolute;
@@ -901,14 +924,6 @@ body:has(#lightBoxDialog[open]) {
   box-shadow: var(--shadow-m);
   transition: 0.12s linear;
 }
-/* #lightBoxDialog .lightBoxImageView img.fadeOut{
-  opacity: 0.81;
-  filter: blur(1px);
-}
-#lightBoxDialog .lightBoxImageView img.fadeIn{
-  opacity: 1;
-  filter: blur(1px);
-} */
 .lightBoxImageView .prevImg,
 .lightBoxImageView .nextImg {
   position: absolute;
@@ -920,7 +935,6 @@ body:has(#lightBoxDialog[open]) {
   pointer-events: all;
   background: var(--text-muted);
   border-radius: 0.3rem;
-  backdrop-filter: blur(6px);
   transition: 0.3s;
 }
 .lightBoxImageView .prevImg {
@@ -947,11 +961,6 @@ body:has(#lightBoxDialog[open]) {
 /* about */
 .about {
   position: relative;
-}
-.about .aboutRow {
-  display: grid;
-  grid-template-columns: 3fr 1fr 2fr;
-  /* isolation: isolate; */
 }
 .aboutImageCol {
   position: relative;
@@ -1031,14 +1040,8 @@ body:has(#lightBoxDialog[open]) {
 .aboutImageWrap .hexagon:hover {
   clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%);
 }
-.aboutCountersCol {
-  justify-items: start;
-}
 .aboutCounters {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.2rem;
   overflow: hidden;
   background: transparent;
 }
@@ -1057,7 +1060,7 @@ body:has(#lightBoxDialog[open]) {
   position: relative;
   align-content: center;
   width: 100%;
-  padding: 0.6rem;
+  padding: 1.5rem 0.6rem;
   border-radius: 3px;
   transition: 0.12s ease-in-out;
   text-align: center;
@@ -1082,7 +1085,6 @@ body:has(#lightBoxDialog[open]) {
   content: "";
   inset: 0;
   border-radius: 3px;
-  background: var(--text-muted);
   opacity: 0.012;
   transition: 0.3s ease-in-out;
   z-index: -1;
@@ -1253,7 +1255,7 @@ body:has(#lightBoxDialog[open]) {
   border-radius: 1rem;
   transition: 0.21s linear;
   background: transparent;
-  box-shadow: var(--shadow-l);
+  box-shadow: var(--shadow-s);
   border: var(--border);
   overflow: hidden;
 }
@@ -1292,9 +1294,6 @@ body:has(#lightBoxDialog[open]) {
     opacity: 0;
   }
 }
-.serviceCard:hover {
-  transform: translateY(-4px);
-}
 .serviceCard .cardRow {
   display: block;
   width: 100%;
@@ -1307,20 +1306,8 @@ body:has(#lightBoxDialog[open]) {
 .serviceCardImage {
   position: relative;
   width: 100%;
-  max-width: 420px;
 }
-.serviceIcon{
-  position: absolute;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  transform: translate(1rem, -27px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border: 1px solid var(--text-muted);
-}
+
 .serviceIcon::before{
   content: "";
   position: absolute;
@@ -1344,6 +1331,21 @@ body:has(#lightBoxDialog[open]) {
   width: 100%;
   /* aspect-ratio: 1; */
   border-radius: 3px;
+}
+.serviceCardContent{
+  position: relative;
+}
+.serviceCardContent .serviceIcon{
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  transform: translate(1rem, -27px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--text-muted);
 }
 .serviceCardContent {
   display: grid;
@@ -1400,9 +1402,6 @@ body:has(#lightBoxDialog[open]) {
   margin-top: 3rem;
   margin-right: 3rem;
 }
-.closeModalController svg path{
-  fill: var(--text-muted);
-}
 .closeModalController,
 .lightBoxImageView .prevImg,
 .lightBoxImageView .nextImg {
@@ -1415,14 +1414,14 @@ body:has(#lightBoxDialog[open]) {
 .closeModalController,
 .lightBoxImageView .prevImg svg,
 .lightBoxImageView .nextImg svg {
-  opacity: 0.5;
+  opacity: 0.6;
   transition: 0.12s linear;
 }
-
-.lightBoxImageView .prevImg svg path,
-.lightBoxImageView .nextImg svg path{
-  fill: var(--bg-light);
-}
+.closeModalController svg path,
+ .lightBoxImageView .prevImg svg path,
+ .lightBoxImageView .nextImg svg path{
+    fill: var(--text);
+  }
 .closeModalController:hover,
 .lightBoxImageView .prevImg:hover svg,
 .lightBoxImageView .nextImg:hover svg {
@@ -1432,7 +1431,6 @@ body:has(#lightBoxDialog[open]) {
 /* testimonials */
 .testimonialRow{
   display: grid;
-  grid-template-columns: 2fr 1fr;
   gap: 1rem;
   background: transparent;
   min-height: 420px;
@@ -1458,6 +1456,7 @@ body:has(#lightBoxDialog[open]) {
   opacity: 0.21;
 }
 .testimonialImageWrap{
+  display: block;
   width: 100%;
   height: 100%;
   background: url("https://img.magnific.com/free-photo/cheerful-women-holding-golden-star-icon_53876-71038.jpg?t=st=1780321681~exp=1780325281~hmac=f5df043259791bad5b625a14f634346a836223a17fac4197e1a23be4dc449735&w=1060");
@@ -1481,7 +1480,7 @@ body:has(#lightBoxDialog[open]) {
   z-index: 100;
   top: 0;
   margin-top: 100px;
-  box-shadow: var(--shadow-l);
+  box-shadow: var(--shadow-m);
   opacity: 0.81;
   transition: 0.3s;
   overflow: hidden;
@@ -1547,7 +1546,7 @@ body:has(#lightBoxDialog[open]) {
   width: 100%;
   min-width: 100%;
   border-radius: 1.3rem;
-  padding: 1.5rem;
+  padding: 3rem 4.2rem;
   background: var(--bg-light);
   box-shadow: var(--shadow-m);
   overflow: hidden;
@@ -1609,7 +1608,7 @@ body:has(#lightBoxDialog[open]) {
 .testCardContent {
   width: 100%;
   height: max-content;
-  padding: 1rem;
+  padding-left: 1rem;
 }
 .smallTestCards .testCardContent {
   padding: 0rem 1rem !important;
@@ -1934,6 +1933,7 @@ button[submit] {
   background: transparent;
   overflow: hidden;
   padding-block: 1.2rem;
+  z-index: 1;
 }
 
 .arteviaFooter::before{
@@ -2182,6 +2182,7 @@ button[submit] {
   background: transparent;
   border-radius: 1rem;
   overflow: hidden;
+  border: var(--border);
   box-shadow: var(--shadow-s);
 }
 .aboutMetrics svg{
@@ -2189,7 +2190,7 @@ button[submit] {
   inset: 0;
   left: 0;
   top: 0;
-  opacity: 0.3;
+  opacity: 0.12;
 }
 .aboutMetrics .metricCounter{
   position: relative;
@@ -2200,7 +2201,7 @@ button[submit] {
   justify-items: center;
   align-content: center;
   margin-inline: auto;
-  box-shadow: var(--shadow-m);
+  box-shadow: var(--shadow-s);
   overflow: hidden;
 }
 .cardsSmall {
@@ -2233,9 +2234,16 @@ button[submit] {
   background: transparent;
   padding: 1.2rem;
   border-radius: 0.3rem;
-  box-shadow: var(--shadow-m);
+  box-shadow: var(--shadow-s);
   overflow: hidden;
-  transition: 0.12s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+.philosophyCards .philosophyCard:hover,
+.processCards .processCard:hover,
+.achiveCounter:hover,
+.whyChCard:hover, 
+.servicesList .serviceCard:hover{
+  box-shadow: var(--shadow-m);
 }
 .achiveCounter{
   min-height: 210px;
@@ -2307,15 +2315,11 @@ button[submit] {
 .processCard svg path{
   fill: var(--theme-300);
 }
-.philosophyCards .philosophyCard {
-  transition: 0.3s ease-in-out;
-}
-.philosophyCards .philosophyCard:hover {
-  transform: translateY(-6px) scale(1.02);
-}
 .phiCardIcon img {
   opacity: 0.72;
 }
+.philosophyCards .philosophyCard:hover,
+.servicesList .serviceCard:hover,
 .processCards .processCard:hover,
 .achiveCounter:hover {
   transform: translateY(-6px) scale(1.02);
@@ -2327,13 +2331,6 @@ button[submit] {
 .processCard svg{
   width: 60px;
   height: 60px;
-}
-.processCard::before{
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0.06 !important;
 }
 .processCard::after {
   position: absolute;
@@ -2414,7 +2411,7 @@ button[submit] {
   height: 100%;
   border-radius: 0.3rem;
   padding: 1rem;
-  transform: translate3d(-100%, 0%) rotate3d(90deg 0 0);
+  transform: translate3d(100%, 0%) rotate3d(90deg 0 0);
   display: none;
   transition: 0.6s ease-in-out;
   box-shadow: var(--shadow-l);
@@ -2424,7 +2421,7 @@ button[submit] {
   transform: translate(0%, 0%);
   display: flex;
   @starting-style{
-  transform: translate(0%, -120%);
+  transform: translate(0%, 120%);
   }
 }
 
@@ -2540,7 +2537,12 @@ button[submit] {
 /* Why Choose Us */
 .whyChooseGrid {
   display: flex;
-  gap: 3rem;
+  gap: clamp(1rem, 1.8vw, 48px);
+}
+
+.whyChCard{
+  height: max-content;
+  min-height: 330px;
 }
 .whyChContent {
   width: 100%;
@@ -2625,9 +2627,6 @@ button[submit] {
 .ourServices.fadeInUp .servicesList{
   /* padding-top: 0px; */
   opacity: 1;
-}
-.servicesList .serviceCard:hover{
-  transform: translateY(-6px) scale(1.02);
 }
 .servicesList .serviceCard img{
   width: 51px;

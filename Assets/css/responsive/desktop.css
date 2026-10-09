@@ -152,9 +152,8 @@
   .aboutRow .aboutImageWrap{
     min-width: 510px;
   }
-  
   .aboutRow .aboutImageWrap:hover{
-    cursor: url("../../images/cursor.svg"), default;
+    cursor: pointer;
   }
 .aboutContent {
   /* margin-left: auto; */
@@ -163,13 +162,9 @@
   padding-left: 1rem;
   align-content: start;
 }
-  .aboutCounters {
-    height: 100%;
-    background: var(--theme-50)
-  }
-  .aboutCounter{
-    max-width: 420px;
-  }
+.aboutCounter{
+  max-width: 420px;
+}
 
 
   
@@ -197,10 +192,33 @@
     padding-inline: 1rem;
   }
 }
-@media screen and (min-width: 1919px) {
-
-.aboutBlog .aboutBlogCol2 picture img{
-  width: 100%;
-  max-height: 900px;
+@media screen and (min-width: 1200px) {
+    .about .aboutRow {
+    display: grid;
+    grid-template-columns: 2.1fr 1fr 1fr !important;
+  }
+  .testimonialRow{
+    grid-template-columns: 2fr 1fr;
+  }
+  .aboutCountersCol .aboutCounters{
+    display: grid;
+    gap: 1.2rem !important;
+  }
+  .aboutFixedContent{
+    min-width: 360px;
+  }
 }
+@media screen and (min-width: 1700px) {
+  .lightBoxViewGrid {
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  }
+}
+@media screen and (min-width: 1919px) {
+  .aboutBlog .aboutBlogCol2 picture img{
+    width: 100%;
+    max-height: 900px;
+  }
+  .lightBoxImage.hiddenImage{
+    display: block;
+  }
 }

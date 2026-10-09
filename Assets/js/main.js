@@ -163,34 +163,36 @@ function serviceCardImgHandler() {
 
 
 const aboutMediaHandler = () => {
-       const aboutImageWrap = document.querySelector(".aboutImageWrap");
-       const availableSpace = aboutImageWrap.getBoundingClientRect().width;
-       if(!aboutImageWrap)return;
-       if(availableSpace > 10){
-        const hexUnits = (availableSpace / 5.8);
-        let hexTopMargin = (availableSpace / 10);
-        let marginTopPatternArray = [2, 1, 0, 1, 2, 3, 4, 3, 2];
-        let marginLeftPatternArray = [0, 1, 2, 3, 4, 3, 2, 1, 2];
-        const hexagons = document.querySelectorAll(".aboutImageWrap .hexagon");
-        hexagons.forEach((hexagon, i) => {
-            hexagon.style.width = hexUnits + "px";
-            hexagon.style.height = hexUnits + "px";
-            hexagon.style.marginTop = (marginTopPatternArray[i] * hexTopMargin) + "px";
-            hexagon.style.marginLeft = (marginLeftPatternArray[i] * hexUnits) + "px";
-        });
-
-        let lastHexMarginLeft = parseFloat(hexagons[4].style.marginLeft);
-        let lastHexMarginTop = parseFloat(hexagons[6].style.marginTop);
-        const totalHexRemainInlineSpace = Math.round(availableSpace - (lastHexMarginLeft + hexUnits));
-        const totalHexRemainVerticalSpace = Math.round((lastHexMarginTop + hexUnits));
-        aboutImageWrap.style.height = totalHexRemainVerticalSpace + 64 + "px";
-        aboutImageWrap.style.padding = (totalHexRemainInlineSpace/ 2) + "px";
-        aboutImageWrap.style.paddingBlock = 32 + "px";
-       aboutImageWrap.classList.remove("settingUp");
-       bannerElemAnimationHandler();
-       }
-    
+    const aboutImageWrap = document.querySelector(".aboutImageWrap");
+    const availableSpace = aboutImageWrap.getBoundingClientRect().width;
+    if(!aboutImageWrap)return;
+    if(availableSpace > 10){
+     const hexUnits = (availableSpace / 5.8);
+     let hexTopMargin = (availableSpace / 10);
+     let marginTopPatternArray = [2, 1, 0, 1, 2, 3, 4, 3, 2];
+     let marginLeftPatternArray = [0, 1, 2, 3, 4, 3, 2, 1, 2];
+     const hexagons = document.querySelectorAll(".aboutImageWrap .hexagon");
+     hexagons.forEach((hexagon, i) => {
+         hexagon.style.width = hexUnits + "px";
+         hexagon.style.height = hexUnits + "px";
+         hexagon.style.marginTop = (marginTopPatternArray[i] * hexTopMargin) + "px";
+         hexagon.style.marginLeft = (marginLeftPatternArray[i] * hexUnits) + "px";
+     });
+    let lastHexMarginLeft = parseFloat(hexagons[4].style.marginLeft);
+    let lastHexMarginTop = parseFloat(hexagons[6].style.marginTop);
+    const totalHexRemainInlineSpace = Math.round(availableSpace - (lastHexMarginLeft + hexUnits));
+    const totalHexRemainVerticalSpace = Math.round((lastHexMarginTop + hexUnits));
+    aboutImageWrap.style.height = totalHexRemainVerticalSpace + 64 + "px";
+    aboutImageWrap.style.padding = 0 + "px";
+    if(window.innerWidth < 1024){
+    aboutImageWrap.style.padding = (totalHexRemainInlineSpace/ 2) + "px";
+    aboutImageWrap.style.paddingBlock = 32 + "px";
+    // aboutImageWrap.style.paddingTop = 0 + "px";
     }
+    aboutImageWrap.classList.remove("settingUp");
+    bannerElemAnimationHandler();
+    }
+      }
     aboutMediaHandler();
 
     
@@ -204,10 +206,4 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", ()=>{
         aboutMediaHandler();
     });
-    const getctaBtn = document.getElementById("getctaBtn");
-    getctaBtn.addEventListener("click", (e)=>{
-        e.preventDefault();
-        window.getStartedDialog.showModal();
     })
-    
-})
