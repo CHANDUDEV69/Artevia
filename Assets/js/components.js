@@ -166,47 +166,95 @@ const observer = new IntersectionObserver((entries) => {
 document.addEventListener("DOMContentLoaded", () => {
     loadComponent("templateHeader", "../components/header.html");
     loadComponent("templateFooter", "../components/footer.html");
+
+    // SVG Glass Effect Generator
+    const heroMetrics =  document.querySelectorAll(".heroMetrics .metricCounter");
+    const aboutCounters =  document.querySelectorAll(".aboutCounters .aboutCounter");
+    const glassElements = [...heroMetrics, ...aboutCounters];
+    glassElements.forEach((glassElementChild, index) => {
+        const namespace = "http://www.w3.org/2000/svg";
+        const filterId = `glass-noise-${index}`;
+        const svg = document.createElementNS(namespace, "svg");
+        const filter = document.createElementNS(namespace, "filter");
+        const turbulence = document.createElementNS(namespace, "feTurbulence");
+        const rect = document.createElementNS(namespace, "rect");
+
+        const updateSize = () => {
+            const { width, height } = glassElementChild.getBoundingClientRect();
+            const svgWidth = Math.max(1, width);
+            const svgHeight = Math.max(1, height);
+
+            svg.setAttribute("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
+            rect.setAttribute("width", `${svgWidth}`);
+            rect.setAttribute("height", `${svgHeight}`);
+        };
+
+        svg.setAttribute("class", "glassNoise");
+        svg.setAttribute("xmlns", namespace);
+        svg.setAttribute("aria-hidden", "true");
+        filter.setAttribute("id", filterId);
+        filter.setAttribute("x", "0");
+        filter.setAttribute("y", "0");
+        filter.setAttribute("width", "100%");
+        filter.setAttribute("height", "100%");
+        turbulence.setAttribute("baseFrequency", "0.012");
+        turbulence.setAttribute("stitchTiles", "stitch");
+        rect.setAttribute("x", "0");
+        rect.setAttribute("y", "0");
+        rect.setAttribute("fill", "purple");
+        rect.setAttribute("filter", `url(#${filterId})`);
+
+        filter.appendChild(turbulence);
+        svg.append(filter, rect);
+        glassElementChild.insertBefore(svg, glassElementChild.firstChild);
+        updateSize();
+
+        const glassElementResizeObserver = new ResizeObserver(updateSize);
+        glassElementResizeObserver.observe(glassElementChild);
+    })
+    
+
+
     // Observer for all sections
     const sections = document.querySelectorAll("section");
     sections.forEach((section) => {
         observer.observe(section);
     });
 
+    // Dialog Toggle Handler
     const getStartedDialog = document.getElementById("getStartedDialog");
     const getctaBtn = document.getElementById("getctaBtn");
     const closegsd = getStartedDialog.querySelector(".closegsd");
-
-    // Open dialog
-    getctaBtn.addEventListener("click", (e) => {
+    if(getctaBtn){
+        // Open Dialog
+        getctaBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        console.time("showModal");
-    getStartedDialog.showModal();
-    console.timeEnd("showModal");
+        getStartedDialog.showModal();
     });
-
-    // Close button
+    }
+    // Dialog Close button
     closegsd.addEventListener("click", (e) => {
         e.preventDefault();
         getStartedDialog.close();
     });
 
-    // Click on backdrop
+    // Backdrop Click Handler
     getStartedDialog.addEventListener("click", (e) => {
         if (e.target === getStartedDialog) {
             getStartedDialog.close();
         }
     });
+    // Service Section Lazy Image Loading Handler
+    // function serviceCardImgHandler() {
+    //     const serviceCards = document.querySelectorAll(".serviceCardImage");
+    //     serviceCards.forEach((serviceCard) => {
+    //         serviceCard.style.background = `url(${serviceCard.dataset.src})`;
+    //         serviceCard.style.backgroundSize = "cover";
+    //     })
+    // }
+    // serviceCardImgHandler();
 
-    function serviceCardImgHandler() {
-        const serviceCards = document.querySelectorAll(".serviceCardImage");
-        serviceCards.forEach((serviceCard) => {
-            serviceCard.style.background = `url(${serviceCard.dataset.src})`;
-            serviceCard.style.backgroundSize = "cover";
-        })
-    }
-    serviceCardImgHandler();
-
-
+    // Team section dynamic content handler
     const teamSection = document.querySelector(".team");
     if (teamSection) {
         const descSocialIcons = teamSection.querySelectorAll(".active .descSocialIcon");
@@ -266,4 +314,9 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("error")
         }
     }
+
+
+
+
+
 })

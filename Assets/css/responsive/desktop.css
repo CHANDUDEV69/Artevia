@@ -185,7 +185,7 @@
     background: url("../../images/team/pattern.svg");
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0.06;
+    opacity: 0.03;
     z-index: -1;
   }
   .designersGrid > p{
@@ -195,7 +195,7 @@
 @media screen and (min-width: 1200px) {
     .about .aboutRow {
     display: grid;
-    grid-template-columns: 2.1fr 1fr 1fr !important;
+    grid-template-columns: 1fr 1fr !important;
   }
   .testimonialRow{
     grid-template-columns: 2fr 1fr;
@@ -205,7 +205,7 @@
     gap: 1.2rem !important;
   }
   .aboutFixedContent{
-    min-width: 360px;
+    min-width: 300px;
   }
 }
 @media screen and (min-width: 1700px) {

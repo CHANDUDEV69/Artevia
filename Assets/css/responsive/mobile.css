@@ -230,6 +230,9 @@
   .heroMetrics, .aboutCounters {
     grid-template-columns: repeat(1, 1fr) !important;
   }
+  .aboutCounters{
+    display: block;
+  }
   .aboutCountersCol .aboutCounters {
     display: block;
   }
