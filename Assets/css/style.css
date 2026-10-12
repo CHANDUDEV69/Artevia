@@ -8,8 +8,8 @@
   --bg-light: hsl(0 0% 10%);
   --text: hsl(0 0% 95%);
   --text-muted: hsl(0 0% 70%);
-  --border-color: hsl(0, 0%, 30%);
-  --border: 1px solid hsl(0, 0%, 30%);
+  --border-color: hsl(0, 0%, 21%);
+  --border: 1px solid hsl(0, 0%, 21%);
 
   --theme-extra-light: #fbf7f4;
   --theme-50: #f8f3ee;
@@ -108,6 +108,7 @@ body:has(.preloader.active) {
   inset: 0;
   background: linear-gradient(45deg, var(--text), var(--text), var(--text-muted));
   opacity: 0.6;
+  transition: 0.21s;
   z-index: -1;
 }
 .card-btn::after{
@@ -122,6 +123,9 @@ body:has(.preloader.active) {
 }
 .card-btn:hover{
   box-shadow: var(--shadow-s);
+}
+.card-btn:hover::before{
+  opacity: 0.72;
 }
 
 .preloader {
@@ -548,8 +552,6 @@ p {
   position: absolute;
   content: "";
   inset: 0;
-  top: 0;
-  left: 0;
   background: linear-gradient(30deg, transparent, var(--text-muted), transparent);
   opacity: 0.12;
   z-index: -1;
@@ -620,20 +622,25 @@ p {
   position: absolute;
   content: "";
   width: 100%;
-  height: 0px;
-  background: linear-gradient(45deg, transparent, var(--text-muted), transparent);
+  height: 1px;
   left: 0;
+  opacity: 0.42;
   transition: 0.3s ease-in-out;
 }
-/* 
 .ctaActionControllers .primaryctaBtn::before,
 .ctaActionControllers .secondaryctaBtn::before{
+  background: linear-gradient(45deg, var(--text-muted),transparent, transparent);
   top: 0;
-}
-.ctaActionControllers .primaryctaBtn::after,
-.ctaActionControllers .secondaryctaBtn::after{
-  bottom: 0;
-}
+  }
+  .ctaActionControllers .primaryctaBtn::after,
+  .ctaActionControllers .secondaryctaBtn::after{
+    height: 100%;
+    width: 1px;
+    left: 0;
+    background: linear-gradient(0deg, transparent, transparent, var(--text-muted));
+    bottom: 0;
+  }
+    /* 
 
 .ctaActionControllers .secondaryctaBtn::before,
 .ctaActionControllers .secondaryctaBtn::after{
@@ -1092,7 +1099,7 @@ body:has(#lightBoxDialog[open]) {
   overflow: hidden;
   cursor: default;
   background: transparent;
-  box-shadow: var(--shadow-m);
+  box-shadow: var(--shadow-m), inset 0px -1px 1px var(--bg);
 }
 .aboutCounter svg{
   position: relative;
@@ -1106,20 +1113,23 @@ body:has(#lightBoxDialog[open]) {
 .aboutCounters .aboutCounter::after {
   position: absolute;
   content: "";
-  inset: 0;
+  width: 1px;
+  height: 100%;
+  left: 0;
   border-radius: 3px;
-  opacity: 0.012;
+  opacity: 0.21;
   transition: 0.3s ease-in-out;
   z-index: -1;
 }
+.aboutCounters .aboutCounter::before{
+  background: linear-gradient(0deg, transparent,transparent, var(--text-muted));
+  top: 0;
+}
 .aboutCounters .aboutCounter::after {
-  inset: initial;
   width: 100%;
   height: 1px;
+  background: linear-gradient(90deg , var(--text-muted), transparent, transparent);
   top: 0;
-  left: 0;
-  background: linear-gradient(90deg, transparent , var(--text-muted), transparent);
-  opacity: 0.9;
 }
 /* .aboutCounter.active::before {
   margin-bottom: 0px;
@@ -1278,8 +1288,8 @@ body:has(#lightBoxDialog[open]) {
   border-radius: 1rem;
   transition: 0.21s linear;
   background: transparent;
-  box-shadow: var(--shadow-s);
-  border: var(--border);
+  box-shadow: var(--shadow-s), inset 1px 1px 2px var(--bg-dark);
+  border: none;
   overflow: hidden;
 }
 .servicesGrid .serviceCard::before,
